@@ -2,5 +2,37 @@
 @import "./helpers/variables";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
+@import "./layout/index.scss";
 
-@import './layout/index.scss'
+.bt-line {
+  border-bottom: 5px solid $primary;
+  padding-bottom: 16px;
+}
+
+.card-img-overlay {
+  transition: all 0.8s ease-in;
+}
+.card-img-overlay:hover {
+  .card-text,
+  .card-title {
+    position: relative;
+    opacity: 1;
+    z-index: 10;
+  }
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(164.37deg, #eb7921 2.79%, #4112db 102.1%);
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
+
+.all {
+  background: linear-gradient(164.37deg, #eb7921 2.79%, #4112db 102.1%);
+}

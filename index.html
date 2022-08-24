@@ -1,113 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Boostrap Index</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/style/all.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style/all.css" />
+    <link rel="preconnect" hresf="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
+    />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+    <header>
+      <nav class="bg-black border-bottom">
+        <div class="container d-flex justify-content-between px-0 px-md-12">
+          <a class="bg-primary text-white fs-1 px-16 px-md-102 title" href="#"
+            >Logo</a
+          >
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch">
+            <li class="border-start px-16 px-md-40 py-8 py-md-24">
+              <a href="#">
+                <span class="material-icons text-white"> shopping_cart </span>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
+              <a class="fs-5 fw-bold text-white" href="">Login</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
-  </div>
-</div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+<main>
+  <section class="banner">
+    <div class="container position-relative">
+      <div class="row title align-items-center">
+        <div class="col-md-4">
+          <article class="mt-40 mt-md-0">
+            <h1 class="mb-28">94 | 指彈</h1>
+            <div class="search bg-light border border-2 border-primary">
+              <form
+                class="d-flex align-items-center justify-content-between"
+                action=""
+              >
+                <input
+                  class="border-0 w-75 px-16"
+                  type="text"
+                  placeholder="立即嘗試"
+                />
+                <select
+                  id="course"
+                  class="w-auto form-select form-select-sm border-0 rounded-0 text-dark"
+                  aria-label="Default select example"
+                >
+                  <option selected="">全部</option>
+                  <option value="1">創作者</option>
+                  <option value="2">特殊調弦</option>
+                  <option value="3">找課程</option>
+                  <option value="3">專輯</option>
+                  <option value="3">吉他譜</option>
+                  <option value="3">文章</option>
+                </select>
+                <button type="submit" class="btn btn-primary rounded-0">
+                  <span class="material-icons-outlined d-block"> search </span>
+                </button>
+              </form>
+            </div>
+          </article>
+        </div>
+        <div class="col-4">
+          <p class="bacground-text font-monospace">Finger Style</p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row py-48 py-md-80 justify-content-center">
+        <div>
+          <div
+            class="d-flex flex-wrap align-items-center position-relative background-box"
+          >
+            <img
+              class="side-guitar"
+              src="./assets/images/side-guitar.png"
+              alt="side-guitar"
+            />
+            <img
+              class="person-move col-12 col-md-3 d-none d-md-block"
+              src="./assets/images/person-1.jpeg"
+              alt="person-1"
+            />
+            <article class="col-md-6 offset-2">
+              <p class="fs-2">您是一個</p>
+              <p class="fs-2 offset-md-1">
+                熱愛吉他的<span class="bt-line">創作者</span>嗎？
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-dark">
+    <div class="container py-48 py-md-80">
+      <h2 class="mb-48"><span class="bt-line">創新</span>平台體驗</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img
+              src="./assets/images/welcome.jpeg"
+              class="card-img"
+              alt="guitar-player-1"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center px-48"
+            >
+              <h5 class="card-title fs-3 mb-32">客製化頁面</h5>
+              <p class="card-text">
+                客製化個人頁面，讓您不用再為建立個人品牌網頁所困擾
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark text-white">
+            <img
+              src="./assets/images/social-media.jpeg"
+              class="card-img"
+              alt="guitar-player-1"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center px-48"
+            >
+              <h5 class="card-title fs-3 mb-32">統一渠道</h5>
+              <p class="card-text">
+                不用再將教學文章與個人動態放在不同平台當您更新網頁內容會提醒您的追蹤者
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark text-white">
+            <img
+              src="./assets/images/guitar-player-1.jpeg"
+              class="card-img"
+              alt="guitar-player-1"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center px-48"
+            >
+              <h5 class="card-title fs-3 mb-32">增加曝光</h5>
+              <p class="card-text">
+                不用擔心因為教學平台分類過多，導致教學課程能見度降低
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 
-    <footer class="footer">
-      footer
-    </footer>
+    <footer class="footer">footer</footer>
 
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
   </body>
-
 </html>

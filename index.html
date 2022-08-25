@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -105,8 +106,8 @@
               alt="person-1"
             />
             <article class="col-md-6 offset-2">
-              <p class="fs-2">您是一個</p>
-              <p class="fs-2 offset-md-1">
+              <p class="fs-2" data-aos="fade-up">您是一個</p>
+              <p class="fs-2 offset-md-1" data-aos="fade-up">
                 熱愛吉他的<span class="bt-line">創作者</span>嗎？
               </p>
             </article>
@@ -115,7 +116,7 @@
       </div>
     </div>
   </section>
-  <section class="bg-dark">
+  <section class="bg-black">
     <div class="container py-48 py-md-80">
       <h2 class="mb-48"><span class="bt-line">創新</span>平台體驗</h2>
       <div class="row">
@@ -130,7 +131,7 @@
               class="card-img-overlay d-flex flex-column justify-content-center px-48"
             >
               <h5 class="card-title fs-3 mb-32">客製化頁面</h5>
-              <p class="card-text">
+              <p class="card-text" data-aos="fade-up">
                 客製化個人頁面，讓您不用再為建立個人品牌網頁所困擾
               </p>
             </div>
@@ -147,7 +148,7 @@
               class="card-img-overlay d-flex flex-column justify-content-center px-48"
             >
               <h5 class="card-title fs-3 mb-32">統一渠道</h5>
-              <p class="card-text">
+              <p class="card-text" data-aos="fade-up">
                 不用再將教學文章與個人動態放在不同平台當您更新網頁內容會提醒您的追蹤者
               </p>
             </div>
@@ -164,7 +165,7 @@
               class="card-img-overlay d-flex flex-column justify-content-center px-48"
             >
               <h5 class="card-title fs-3 mb-32">增加曝光</h5>
-              <p class="card-text">
+              <p class="card-text" data-aos="fade-up">
                 不用擔心因為教學平台分類過多，導致教學課程能見度降低
               </p>
             </div>
@@ -173,12 +174,68 @@
       </div>
     </div>
   </section>
+  <section class="bacground-borad">
+    <div class="container py-48 py-md-80">
+      <div class="row py-80" data-aos="fade-up">
+        <div class="col-md-8 mb-48">
+          <div class="card py-16 bg-transparent">
+            <div class="row g-0">
+              <div class="col-md-4 my-auto">
+                <img
+                  src="./assets/images/guitar-player-2.jpeg"
+                  class="rounded-circle guitar-player-image offset-1"
+                  alt="guitar-player-1"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title mb-24 fs-3">Ｗen</h5>
+                  <p class="card-text mb-24">
+                    在平台還未成立前都要請人另外架設網站，現在只要透過幾個簡單步驟就可快速上架課程及個人創作吉他譜。
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">成立個人品牌超過3年</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 ms-md-auto">
+          <div class="card py-16 bg-transparent">
+            <div class="row g-0 flex-row-reverse" data-aos="fade-up">
+              <div class="col-md-4 my-auto">
+                <img
+                  src="./assets/images/guitar-player-1.jpeg"
+                  class="rounded-circle guitar-player-image offset-1"
+                  alt="guitar-player-1"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title mb-24 fs-3">Paupau</h5>
+                  <p class="card-text mb-24">
+                    我的文章分享及教學總是散落各個平台及個人網誌，這裡可以統整並上傳課程使得我在教學上更省心。
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">10年影音教學經驗</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section></section>
 </main>
 
 
     <footer class="footer">footer</footer>
 
     <script src="./assets/js/vendors.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/all.js"></script>
   </body>
 </html>

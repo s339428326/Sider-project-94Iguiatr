@@ -34,4 +34,11 @@ AOS.init({
   anchorPlacement: "top-bottom" // defines which position of the element regarding to window should trigger the animation
 
 });
+var swiper = new Swiper(".swiper-container", {
+  pagination: ".swiper-pagination",
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  paginationClickable: false,
+  freeMode: true
+});
 //# sourceMappingURL=all.js.map

@@ -9,30 +9,60 @@
   padding-bottom: 16px;
 }
 
-.card-img-overlay {
-  transition: all 0.8s ease-in;
-}
-.card-img-overlay:hover {
-  .card-text,
-  .card-title {
-    position: relative;
-    opacity: 1;
-    z-index: 10;
+.card-img {
+  height: 350px;
+  object-fit: cover;
+  @include media-breakpoint-up(md) {
+    height: 100%;
   }
+}
+
+.card-img-overlay {
   &::after {
+    transition: all 0.35s ease;
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(164.37deg, #eb7921 2.79%, #4112db 102.1%);
+    height: 40%;
     opacity: 0.8;
     z-index: 1;
   }
 }
 
-.all {
-  background: linear-gradient(164.37deg, #eb7921 2.79%, #4112db 102.1%);
+.card-img-overlay:hover {
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(240, 118, 47, 0) 0%, #f0762f 100%);
+    z-index: 1;
+  }
+}
+
+.swiper-container {
+  .swiper-slide {
+    width: auto;
+  }
+}
+
+.f-h {
+  height: 900px;
+}
+
+//login
+.login-line {
+  &::before,
+  &::after {
+    content: " ";
+    height: 1px;
+    width: 30%;
+    background-color: white;
+  }
 }

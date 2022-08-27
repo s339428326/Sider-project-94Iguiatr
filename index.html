@@ -66,7 +66,7 @@
                 />
                 <select
                   id="course"
-                  class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark"
+                  class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
                   aria-label="Default select example"
                 >
                   <option selected="">全部</option>
@@ -77,7 +77,7 @@
                   <option value="3">吉他譜</option>
                   <option value="3">文章</option>
                 </select>
-                <button type="submit" class="btn btn-primary rounded-0">
+                <button type="submit" class="bg-primary border-0 rounded-0 p-8">
                   <span class="material-icons-outlined d-block"> search </span>
                 </button>
               </form>
@@ -124,12 +124,12 @@
               src="./assets/images/person-1.jpeg"
               alt="person-1"
             />
-            <article class="col-md-6 offset-2">
+            <section class="col-md-7 offset-2">
               <p class="fs-2" data-aos="fade-up">您是一個</p>
               <p class="fs-2 offset-md-1" data-aos="fade-up">
                 熱愛吉他的<span class="bt-line">創作者</span>嗎？
               </p>
-            </article>
+            </section>
           </div>
         </div>
       </div>
@@ -140,9 +140,9 @@
       <h2 class="mb-48"><span class="bt-line">創新</span>平台體驗</h2>
       <div class="row">
         <div class="col-md-4">
-          <div class="card border-0 text-white h-100 rounded-0">
+          <div class="card border-0 text-white rounded-0">
             <img
-              src="./assets/images/kelly-sikkema-ml1IgjV8OvY-unsplash.jpeg"
+              src="./assets/images/kelly-sikkema-ml1IgjV8OvY-unsplash.png"
               class="card-img rounded-0 img-postion"
               alt="guitar-player-1"
             />
@@ -157,7 +157,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 text-white h-100 rounded-0">
+          <div class="card border-0 text-white rounded-0">
             <img
               src="./assets/images/social-media.jpeg"
               class="card-img rounded-0"
@@ -174,7 +174,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 text-white h-100 rounded-0">
+          <div class="card border-0 text-white rounded-0">
             <img
               src="./assets/images/guitar-player-1.jpeg"
               class="card-img rounded-0"
@@ -457,7 +457,7 @@
 </main>
 
 
-    <footer class="footer border-top bg-dark">
+    <footer class="footer border-top bg-black">
       <div class="container py-104">
         <div class="row flex-column align-items-center">
           <div class="d-flex justify-content-center align-items-center mb-16">
@@ -513,16 +513,28 @@
             </ul>
           </div>
           <div class="col-6 col-md-2">
-            <div class="border-bottom text-center mb-8">
-              <h5 class="fs-5 fw-bold">商務</h5>
+            <div class="mb-48 mb-md-0">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">商務</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">合作媒體</a></li>
+                <li><a href="">學生與校園合作</a></li>
+              </ul>
             </div>
-
-            <ul class="list-unstyled ms-0 px-18 mb-0">
-              <li><a href="">合作媒體</a></li>
-              <li><a href="">學生與校園合作</a></li>
-            </ul>
+            <div class="d-md-none">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">其他</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">人才招募</a></li>
+                <li><a href="">創作者指南</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-6 col-md-2">
+          <div class="col-6 col-md-2 d-none d-md-block">
             <div class="border-bottom text-center mb-8">
               <h5 class="fs-5 fw-bold">其他</h5>
             </div>
@@ -534,8 +546,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-primary">
-        <p class="text-center text-white">
+      <div class="bg-primary py-4">
+        <p class="text-center text-white mb-0">
           Copyright © 2022 94 | 指彈 
         </p>
       </div>

@@ -14727,4 +14727,23 @@ fieldset:disabled .btn {
   background-color: white;
 }
 
+.rounded-left {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+@media (min-width: 992px) {
+  .rounded-left {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .rounded-right {
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+  }
+}
+
 /*# sourceMappingURL=all.css.map */

@@ -26,3 +26,15 @@ var swiper = new Swiper(".swiper-container", {
   paginationClickable: false,
   freeMode: true,
 });
+
+//fake
+// const fakeSearch = document.querySelector(".fake-search");
+
+// fakeSearch.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter") {
+//     console.log("stop");
+//     window.location.href = "https://www.google.com/";
+//   }
+// });
+
+// ../../search.html

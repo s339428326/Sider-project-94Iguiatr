@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>94 | Guitar</title>
+    <!-- Boostrap5 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/style/all.css" />
-    <link rel="preconnect" hresf="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <!-- google fonts Anto-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- google icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
     />
+    <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- all.scss -->
+    <link rel="stylesheet" href="./assets/style/all.css" />
   </head>
 
   <body>
-    <header>
+    <header class="sticky-top">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
-          <a class="bg-primary text-white fs-1 px-16 px-md-102 title" href="./index.html"
+          <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
           <ul class="d-flex list-unstyled mb-0 align-items-stretch">
@@ -148,7 +151,7 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide-to="1"
                   >
-                    <a href="">吉他要練什麼才會進步變強？</a>
+                    <a href="">吉他練什麼才會變強？</a>
                   </li>
                   <li
                     class="text-center"
@@ -337,7 +340,7 @@
               </div>
               <div class="rounded-2 py-16 mt-24">
                 <h2 class="text-center fs-5 border-bottom border-3 pb-16">
-                  熱門課程
+                  熱門文章
                 </h2>
                 <ul class="list-unstyled mb-0">
                   <li
@@ -345,21 +348,21 @@
                     data-bs-target="#carouse3"
                     data-bs-slide-to="0"
                   >
-                    <a href="">爬格子 最有效的練習</a>
+                    <a href="">FingerStyle流派 </a>
                   </li>
                   <li
                     class="text-center"
                     data-bs-target="#carouse3"
                     data-bs-slide-to="1"
                   >
-                    <a href="">吉他要練什麼才會進步變強？</a>
+                    <a href="">FingerStyle流派 </a>
                   </li>
                   <li
                     class="text-center"
                     data-bs-target="#carouse3"
                     data-bs-slide-to="2"
                   >
-                    <a href="">如何找出和弦的根音？</a>
+                    <a href="">FingerStyle流派 </a>
                   </li>
                 </ul>
               </div>
@@ -371,7 +374,9 @@
         <h1 class="fs-2">會員登入</h1>
         <div class="mt-24 bg-dark rounded-3 py-40 px-16">
           <div class="text-center mb-40">
-            <span class="fs-2 bg-primary py-8 px-16">Logo</span>
+            <span class="fs-2 bg-primary py-4 px-16 rounded-2 font-monospace"
+              >Logo</span
+            >
           </div>
           <form action="">
             <div class="d-flex justify-content-center mb-24">
@@ -397,7 +402,8 @@
               <input class="btn btn-primary mt-16" type="submit" value="登入" />
             </div>
             <div class="text-center mt-8">
-              <a href="">忘記密碼</a>
+              <a class="me-24" href="./forgotPassword.html">忘記密碼</a>
+              <a href="./member.html">登入預覽畫面</a>
             </div>
             <div
               class="d-flex login-line mt-8 mb-8 align-items-center justify-content-center"
@@ -438,8 +444,8 @@
       <div class="container py-104">
         <div class="row flex-column align-items-center">
           <div class="d-flex justify-content-center align-items-center mb-16">
-            <span class="fs-4 me-8">Logo</span>
-            <a class="text-white fs-5 mb-0" href="#">94 | 指彈</a>
+            <span class="bg-primary rounded-1 p-4 fs-4 me-8 font-monospace">Logo</span>
+            <a class="text-white fs-5 mb-0 font-monospace" href="./">94 | Guitar</a>
           </div>
 
           <div class="col-md-2 mb-32">

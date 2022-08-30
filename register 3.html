@@ -54,7 +54,7 @@
         <div class="d-flex rounded-3 ps-md-0 flex-column flex-md-row">
           <div class="col-md-6 order-1 order-md-0">
             <img
-              class="img-fluid rounded-3"
+              class="rounded-3 login-image"
               src="./assets/images/welcome.jpeg"
               alt="welcome"
             />
@@ -68,7 +68,7 @@
                     >註冊信箱</label
                   >
                   <input
-                    class="border border-primary border-1 rounded-1 py-8"
+                    class="border border-primary border-1 rounded-1 py-6 px-8"
                     type="email"
                     id="email"
                     placeholder="請輸入信箱"
@@ -79,7 +79,7 @@
                     >密碼</label
                   >
                   <input
-                    class="border border-primary border-1 rounded-1"
+                    class="border border-primary border-1 rounded-1 py-6 px-8"
                     type="password"
                     id="password"
                     placeholder="請輸入密碼"
@@ -90,7 +90,7 @@
                     >請再次輸入密碼</label
                   >
                   <input
-                    class="border border-primary border-1 rounded-1"
+                    class="border border-primary border-1 rounded-1 py-6 px-8"
                     type="password"
                     id="password"
                     placeholder="請輸入密碼"
@@ -101,20 +101,18 @@
                     >生日</label
                   >
                   <input
-                    class="border border-primary border-1 rounded-1"
+                    class="border border-primary border-1 rounded-1 py-6 px-8"
                     type="date"
                     id="date"
                     placeholder="生日"
                   />
                 </div>
                 <div class="d-flex flex-column mb-8">
-                  <label
-                    class="visually-hidden text-black mb-4"
-                    for="inlineFormSelectPref"
+                  <label class="text-black mb-4" for="inlineFormSelectPref"
                     >國家</label
                   >
                   <select
-                    class="form-select text-black"
+                    class="form-select text-black border-primary"
                     id="inlineFormSelectPref"
                   >
                     <option selected>Choose...</option>
@@ -123,6 +121,26 @@
                     <option value="3">Three</option>
                   </select>
                 </div>
+                <div class="d-flex flex-column mb-8">
+                  <label class="text-black mb-4" for="password" id="password"
+                    >暱稱</label
+                  >
+                  <input
+                    class="border border-primary border-1 rounded-1 py-6 px-8"
+                    type="text"
+                    id="text"
+                    placeholder="請輸入暱稱"
+                  />
+                </div>
+
+                <a
+                  class="btn btn-primary w-100 text-white fw-bold mt-32"
+                  href="./index.html"
+                  type="submit"
+                  value="fav_HTML"
+                >
+                  確認送出</a
+                >
               </form>
             </div>
           </div>

@@ -123,51 +123,51 @@
             <section>
               <h1 class="fs-3 mb-32">個人簡介</h1>
               <div class="profile-top row">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                   <div
-                    class="image-card d-flex flex-column align-items-center border border-3 rounded-3 border-primary p-24 gap-8 border-dashed mb-24 mb-md-0"
+                    class="image-card d-flex flex-column border border-3 rounded-3 border-primary p-24 gap-8 border-dashed mb-24 mb-lg-0"
                   >
                     <img
-                      class="object-cover rounded-circle mb-24"
+                      class="object-cover rounded-circle mx-auto mb-24"
                       src="./assets/images/guitar-player-2-origin.jpeg"
                       alt="魯凱"
                       width="100"
                       height="100"
                     />
-                    <div class="d-flex gap-4">
-                      <p class="my-auto">暱稱：</p>
-                      <input type="text" placeholder="請輸入暱稱" />
-                    </div>
+                    <label class="my-auto" for="neck-name">暱稱:</label>
+                    <input
+                      id="neck-name"
+                      type="text"
+                      placeholder="請輸入暱稱"
+                    />
                     <div class="d-flex gap-8">
-                      <p class="my-auto">個人大頭照：</p>
+                      <p class="my-auto flex-start">個人大頭照：</p>
                       <p class="my-auto">profile.img</p>
-                      <input
-                        class="btn btn-primary p-4 text-white"
-                        type="button"
-                        value="上傳"
-                      />
                     </div>
-                    <div>
+                    <input
+                      class="btn btn-primary p-4 mt-8 text-white w-100 w-lg-50"
+                      type="button"
+                      value="更換大頭照"
+                    />
+                    <div class="mb-8">
                       <p>個性宣言：</p>
                       <textarea
-                        class="p-8"
+                        class="p-8 w-100"
                         name="
                         personal-talk"
                         id="personal-talk"
-                        cols="20"
-                        rows="5"
                         style="resize: none"
                         placeholder="請書自己的個性宣言"
                       ></textarea>
                     </div>
                     <input
-                      class="btn btn-primary w-50 text-white"
+                      class="btn btn-primary w-100 text-white"
                       type="button"
-                      value="更新"
+                      value="更新資料"
                     />
                   </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-lg-8">
                   <div
                     class="image-card d-flex flex-column border border-3 rounded-3 border-primary p-24 gap-8 border-dashed mb-24"
                   >
@@ -212,7 +212,7 @@
                   </div>
                 </div>
                 <p class="fs-3 fw-bold my-32">個人介紹</p>
-                <div class="col-md-12">
+                <div class="col-lg-12">
                   <div
                     class="border-dashed border-3 rounded-3 border-primary p-24"
                   >

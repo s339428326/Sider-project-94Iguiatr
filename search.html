@@ -175,11 +175,11 @@
               <option value="1">創作者</option>
               <option value="2">特殊調弦</option>
               <option value="3">找課程</option>
-              <option value="3">專輯</option>
-              <option value="3">吉他譜</option>
-              <option value="3">文章</option>
+              <option value="4">專輯</option>
+              <option value="5">吉他譜</option>
+              <option value="6">文章</option>
             </select>
-            <a type="submit" class="border-0 rounded-0" href="#">
+            <a type="submit" class="border-0 rounded-0 search-btn" href="#">
               <span
                 class="text-white material-icons-outlined d-block bg-primary p-8"
               >
@@ -196,91 +196,7 @@
       <div class="col-md-8">
         <h2 class="mb-32">熱門課程</h2>
         <div class="swiper swiper-container">
-          <div class="swiper-wrapper text-white">
-            <div class="swiper-slide">
-              <div class="course-card bg-light text-black rounded-2">
-                <div class="course-head">
-                  <img
-                    class="object-cover rounded-top"
-                    src="./assets/images/player-guitar.png"
-                    alt="player-guitar"
-                    width="340"
-                    height="200"
-                  />
-                  <div class="d-flex fs-5 justify-content-center mt-8">
-                    <p class="me-4">課程:</p>
-                    <p class="course-name">course.name</p>
-                  </div>
-                </div>
-                <div class="course-body d-flex gap-8 px-16">
-                  <div class="text-center">
-                    <p>學生人數</p>
-                    <p class="course-student">course.student</p>
-                  </div>
-                  <div class="text-center">
-                    <p>課程分數</p>
-                    <p class="course-score">course.score</p>
-                  </div>
-                  <div class="text-center">
-                    <p>課程總時數</p>
-                    <p class="course-time">course.time</p>
-                  </div>
-                </div>
-                <div class="course-footer px-16 pb-16">
-                  <div class="d-flex">
-                    <p class="mb-0">定價：＄</p>
-                    <p class="course-price pe-8 mb-0">course.price</p>
-                    <p
-                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
-                    >
-                      course.discountPric
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="course-card bg-light text-black rounded-2">
-                <div class="course-head">
-                  <img
-                    class="object-cover rounded-top"
-                    src="./assets/images/player-guitar.png"
-                    alt="player-guitar"
-                    width="340"
-                    height="200"
-                  />
-                  <div class="d-flex fs-5 justify-content-center mt-8">
-                    <p class="me-4">課程:</p>
-                    <p class="course-name">course.name</p>
-                  </div>
-                </div>
-                <div class="course-body d-flex gap-8 px-16">
-                  <div class="text-center">
-                    <p>學生人數</p>
-                    <p class="course-student">course.student</p>
-                  </div>
-                  <div class="text-center">
-                    <p>課程分數</p>
-                    <p class="course-score">course.score</p>
-                  </div>
-                  <div class="text-center">
-                    <p>課程總時數</p>
-                    <p class="course-time">course.time</p>
-                  </div>
-                </div>
-                <div class="course-footer px-16 pb-16">
-                  <div class="d-flex">
-                    <p class="mb-0">定價：＄</p>
-                    <p class="course-price pe-8 mb-0">course.price</p>
-                    <p
-                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
-                    >
-                      course.discountPric
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="course-list swiper-wrapper text-white">
             <div class="swiper-slide">
               <div class="course-card bg-light text-black rounded-2">
                 <div class="course-head">
@@ -513,6 +429,7 @@
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/all.js"></script>
   </body>
 </html>

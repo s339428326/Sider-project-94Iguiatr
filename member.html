@@ -227,14 +227,87 @@
                         placeholder="請輸入個人介紹及教學經驗"
                       ></textarea>
                     </div>
-                    <div class="col-md-4">
-                      <div class="d-flex border-bottom mb-4">
-                        <p>教學項目：</p>
+                    <div class="row mb-24">
+                      <div class="col-md-4">
+                        <div
+                          class="d-flex border-bottom mb-4 align-items-center"
+                        >
+                          <label
+                            class="fs-5 fw-bold my-auto py-16"
+                            for="teach-item"
+                            >教學項目：</label
+                          >
+                          <input
+                            class="btn btn-primary text-white fw-bold"
+                            type="button"
+                            value="+ 新增項目"
+                          />
+                        </div>
+                        <input
+                          class="w-100 mb-8 p-4"
+                          type="text"
+                          name="teach-item"
+                          id="teach-item"
+                          placeholder="請輸入教學項目"
+                        />
                       </div>
-                      <input type="button" />
+                      <div class="col-md-4">
+                        <div
+                          class="d-flex border-bottom mb-4 align-items-center"
+                        >
+                          <label
+                            class="fs-5 fw-bold my-auto py-16"
+                            for="competition-experience"
+                            >參賽經歷：</label
+                          >
+                          <input
+                            class="btn btn-primary text-white fw-bold"
+                            type="button"
+                            value="+ 參賽經歷"
+                          />
+                        </div>
+                        <input
+                          class="w-100 mb-8 p-4"
+                          type="text"
+                          name="
+                          competition-experience"
+                          id="competition-experience"
+                          placeholder="請輸入參賽經歷"
+                        />
+                      </div>
+                      <div class="col-md-4">
+                        <div
+                          class="d-flex border-bottom mb-4 align-items-center"
+                        >
+                          <label
+                            class="fs-5 fw-bold my-auto py-16"
+                            for="teach-experience"
+                            >教學經歷：</label
+                          >
+                          <input
+                            class="btn btn-primary text-white fw-bold"
+                            type="button"
+                            value="+ 教學經歷"
+                          />
+                        </div>
+                        <input
+                          class="w-100 mb-8 p-4"
+                          type="text"
+                          name="teach-experience"
+                          id="teach-experience"
+                          placeholder="請輸入教學經歷"
+                        />
+                      </div>
                     </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"></div>
+                    <div class="row">
+                      <div class="col-md-2 offset-md-10">
+                        <input
+                          class="btn btn-primary text-white fw-bold"
+                          type="button"
+                          value="更新資料"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -246,7 +319,352 @@
             role="tabpanel"
             aria-labelledby="v-pills-profile-tab"
           >
-            ...
+            <div class="row">
+              <h1 class="fs-3 mb-24">編輯上架內容</h1>
+              <div class="col-md-12">
+                <div
+                  class="search bg-light border border-2 border-primary mb-24"
+                >
+                  <form
+                    class="d-flex align-items-center justify-content-between"
+                    action=""
+                  >
+                    <input
+                      class="border-0 w-75 px-16 fake-search"
+                      type="text"
+                      placeholder="搜索上架內容"
+                    />
+                    <select
+                      id="course"
+                      class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                      aria-label="Default select example"
+                    >
+                      <option selected="">全部</option>
+                      <option value="1">課程</option>
+                      <option value="2">文章</option>
+                      <option value="3">吉他譜</option>
+                    </select>
+                    <a type="submit" class="border-0 rounded-0" href="#">
+                      <span
+                        class="bg-primary p-8 text-white material-icons-outlined d-block"
+                      >
+                        search
+                      </span>
+                    </a>
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="d-flex gap-24 mb-16">
+                  <p class="fs-4 fw-bold my-auto">上傳課程列表</p>
+                  <a class="btn btn-primary text-white" href="#">+ 新增課程</a>
+                </div>
+                <div
+                  class="course-price d-flex flex-column gap-16 overflow-auto h-475"
+                >
+                  <div
+                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                  >
+                    <div class="list-course-image">
+                      <img
+                        class="object-cover"
+                        src="./assets/images/guitar-board.png"
+                        alt="guitar-board"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="list-course-middle d-flex flex-column gap-8">
+                      <a class="fw-bold text-black" href="#"
+                        >地獄練習一週掌握吉他音階用法</a
+                      >
+                      <div class="d-flex justify-content-between">
+                        <div class="text-center">
+                          <p class="mb-4">學生人數</p>
+                          <p class="mb-0">465</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">評分</p>
+                          <p class="mb-0">4.5</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">單元數量</p>
+                          <p class="mb-0">15</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <p class="mb-0">價格：</p>
+                          <p class="mb-0">$390</p>
+                        </div>
+                        <div class="d-flex gap-4">
+                          <p
+                            class="text-decoration-line-through text-gray fs-7 mb-0 mt-auto"
+                          >
+                            2990
+                          </p>
+                          <label for="discount-price">定期促銷</label>
+                          <input
+                            type="checkbox"
+                            name="discount-price"
+                            id="discount-price"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-course-end d-flex flex-column gap-4">
+                      <a class="btn btn-primary text-white" href="#">編輯</a>
+                      <a class="btn btn-primary text-white disabled" href="#"
+                        >上架</a
+                      >
+                      <a class="btn btn-primary text-white" href="#">下架</a>
+                    </div>
+                  </div>
+                  <div
+                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                  >
+                    <div class="list-course-image">
+                      <img
+                        class="object-cover"
+                        src="./assets/images/guitar-board.png"
+                        alt="guitar-board"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="list-course-middle d-flex flex-column gap-8">
+                      <a class="fw-bold text-black" href="#"
+                        >地獄練習一週掌握吉他音階用法</a
+                      >
+                      <div class="d-flex justify-content-between">
+                        <div class="text-center">
+                          <p class="mb-4">學生人數</p>
+                          <p class="mb-0">465</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">評分</p>
+                          <p class="mb-0">4.5</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">單元數量</p>
+                          <p class="mb-0">15</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <p class="mb-0">價格：</p>
+                          <p class="mb-0">$390</p>
+                        </div>
+                        <div class="d-flex gap-4">
+                          <p
+                            class="text-decoration-line-through text-gray fs-7 mb-0 mt-auto"
+                          >
+                            2990
+                          </p>
+                          <label for="discount-price">定期促銷</label>
+                          <input
+                            type="checkbox"
+                            name="discount-price"
+                            id="discount-price"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-course-end d-flex flex-column gap-4">
+                      <a class="btn btn-primary text-white" href="#">編輯</a>
+                      <a class="btn btn-primary text-white disabled" href="#"
+                        >上架</a
+                      >
+                      <a class="btn btn-primary text-white" href="#">下架</a>
+                    </div>
+                  </div>
+                  <div
+                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                  >
+                    <div class="list-course-image">
+                      <img
+                        class="object-cover"
+                        src="./assets/images/guitar-board.png"
+                        alt="guitar-board"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="list-course-middle d-flex flex-column gap-8">
+                      <a class="fw-bold text-black" href="#"
+                        >地獄練習一週掌握吉他音階用法</a
+                      >
+                      <div class="d-flex justify-content-between">
+                        <div class="text-center">
+                          <p class="mb-4">學生人數</p>
+                          <p class="mb-0">465</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">評分</p>
+                          <p class="mb-0">4.5</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">單元數量</p>
+                          <p class="mb-0">15</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <p class="mb-0">價格：</p>
+                          <p class="mb-0">$390</p>
+                        </div>
+                        <div class="d-flex gap-4">
+                          <p
+                            class="text-decoration-line-through text-gray fs-7 mb-0 mt-auto"
+                          >
+                            2990
+                          </p>
+                          <label for="discount-price">定期促銷</label>
+                          <input
+                            type="checkbox"
+                            name="discount-price"
+                            id="discount-price"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-course-end d-flex flex-column gap-4">
+                      <a class="btn btn-primary text-white" href="#">編輯</a>
+                      <a class="btn btn-primary text-white disabled" href="#"
+                        >上架</a
+                      >
+                      <a class="btn btn-primary text-white" href="#">下架</a>
+                    </div>
+                  </div>
+                  <div
+                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                  >
+                    <div class="list-course-image">
+                      <img
+                        class="object-cover"
+                        src="./assets/images/guitar-board.png"
+                        alt="guitar-board"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="list-course-middle d-flex flex-column gap-8">
+                      <a class="fw-bold text-black" href="#"
+                        >地獄練習一週掌握吉他音階用法</a
+                      >
+                      <div class="d-flex justify-content-between">
+                        <div class="text-center">
+                          <p class="mb-4">學生人數</p>
+                          <p class="mb-0">465</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">評分</p>
+                          <p class="mb-0">4.5</p>
+                        </div>
+                        <div class="text-center">
+                          <p class="mb-4">單元數量</p>
+                          <p class="mb-0">15</p>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <p class="mb-0">價格：</p>
+                          <p class="mb-0">$390</p>
+                        </div>
+                        <div class="d-flex gap-4">
+                          <p
+                            class="text-decoration-line-through text-gray fs-7 mb-0 mt-auto"
+                          >
+                            2990
+                          </p>
+                          <label for="discount-price">定期促銷</label>
+                          <input
+                            type="checkbox"
+                            name="discount-price"
+                            id="discount-price"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-course-end d-flex flex-column gap-4">
+                      <a class="btn btn-primary text-white" href="#">編輯</a>
+                      <a class="btn btn-primary text-white disabled" href="#"
+                        >上架</a
+                      >
+                      <a class="btn btn-primary text-white" href="#">下架</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="d-flex gap-24 mb-16">
+                  <p class="fs-4 fw-bold my-auto">上傳文章列表</p>
+                  <a class="btn btn-primary text-white" href="#">+ 新增文章</a>
+                </div>
+                <div
+                  class="article-content d-flex flex-column gap-16 overflow-auto h-475"
+                >
+                  <div
+                    class="list-article d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                  >
+                    <div class="list-article-image">
+                      <img
+                        class="object-cover"
+                        src="./assets/images/guitar-board.png"
+                        alt="guitar-board"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="list-article-middle d-flex flex-column gap-8">
+                      <a class="fw-bold text-black" href="#"
+                        >FingerStyle流派介紹</a
+                      >
+                      <div class="d-flex">
+                        <p class="mb-0">評分：</p>
+                        <p class="mb-0">4.5</p>
+                      </div>
+                      <div class="d-flex">
+                        <p>收藏數量：</p>
+                        <p>500</p>
+                      </div>
+                    </div>
+                    <div class="list-article-end d-flex flex-column gap-4">
+                      <a class="btn btn-primary text-white" href="#">編輯</a>
+                      <a class="btn btn-primary text-white disabled" href="#"
+                        >上架</a
+                      >
+                      <a class="btn btn-primary text-white" href="#">下架</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <p>上架專輯</p>
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <p></p>
+                    </div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 9</div>
+                  </div>
+                  <div class="swiper-button-next text-white"></div>
+                  <div class="swiper-button-prev text-white"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -370,6 +788,7 @@
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/all.js"></script>
   </body>
 </html>

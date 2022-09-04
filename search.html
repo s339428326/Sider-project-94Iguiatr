@@ -156,7 +156,7 @@
   <section class="container">
     <div class="row justify-content-center my-32">
       <div class="col-md-8">
-        <div class="search bg-light border border-2 border-primary mb-24">
+        <div class="search bg-light border border-2 border-primary">
           <form
             class="d-flex align-items-center justify-content-between"
             action=""
@@ -171,13 +171,12 @@
               class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
               aria-label="Default select example"
             >
-              <option selected="">全部</option>
-              <option value="1">創作者</option>
-              <option value="2">特殊調弦</option>
-              <option value="3">找課程</option>
-              <option value="4">專輯</option>
-              <option value="5">吉他譜</option>
-              <option value="6">文章</option>
+              <option selected="" value="0">請選擇</option>
+              <option value="1">找課程</option>
+              <!-- <option value="2">文章</option>
+              <option value="3">吉他譜</option>
+              <option value="4">創作者</option>
+              <option value="5">特殊調弦</option> -->
             </select>
             <a type="submit" class="border-0 rounded-0 search-btn" href="#">
               <span
@@ -191,13 +190,14 @@
       </div>
     </div>
   </section>
-  <section class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h2 class="mb-32">熱門課程</h2>
-        <div class="swiper swiper-container">
-          <div class="course-list swiper-wrapper text-white">
-            <div class="swiper-slide">
+
+  <section class="container search-content">
+    <div class="row no-search-page">
+      <div class="col">
+        <h2 class="course-list-title mb-32">熱門課程</h2>
+        <div class="swiper swiper-container mb-32">
+          <div class="course-list swiper-wrapper text-white d-flex">
+            <!-- <div class="swiper-slide">
               <div class="course-card bg-light text-black rounded-2">
                 <div class="course-head">
                   <img
@@ -238,12 +238,49 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
-        <h2 class="my-32">熱門文章</h2>
-        <ul class="row list-unstyled gap-16">
+        <ul class="list-unstyled col-md-4 tab-list mb-32">
+          <h2 class="mb-32 tab-list-title">熱門吉他譜</h2>
+          <li class="d-flex mb-24">
+            <div
+              class="d-flex align-items-center gap-8 w-100 justify-content-around"
+              href="#"
+            >
+              <p class="fs-1 fw-bold text-white">-1</p>
+              <div
+                class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-row flex-md-column flex-lg-row rounded-3 gap-8"
+              >
+                <div>
+                  <img
+                    class="object-cover rounded-circle"
+                    src="./assets/images/deer.png"
+                    alt="album-1"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+                <div>
+                  <p
+                    class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
+                  >
+                    森林馬戲團
+                  </p>
+                  <ul class="list-unstyled text-black">
+                    <li>曲名：動物ＸＸ</li>
+                    <li>Turning：EADGBE(Standard)</li>
+                    <li><a href="#">創作者：X羊</a></li>
+                    <li>定價：＄250</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h2 class="article-list-title my-32">熱門文章</h2>
+        <ul class="row list-unstyled gap-16 article-list">
           <li>
             <div class="article d-flex text-white gap-16" href="#">
               <div>
@@ -288,46 +325,60 @@
           </li>
         </ul>
       </div>
-      <ul class="list-unstyled col-md-4">
-        <h2 class="mb-32">熱門吉他譜</h2>
-        <li class="d-flex mb-24">
-          <div
-            class="d-flex align-items-center gap-8 w-100 justify-content-around"
-            href="#"
-          >
-            <p class="fs-1 fw-bold text-white">-1</p>
-            <div
-              class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-row flex-md-column flex-lg-row rounded-3 gap-8"
-            >
-              <div>
-                <img
-                  class="object-cover rounded-circle"
-                  src="./assets/images/deer.png"
-                  alt="album-1"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div>
-                <p
-                  class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
-                >
-                  森林馬戲團
-                </p>
-                <ul class="list-unstyled text-black">
-                  <li>曲名：動物ＸＸ</li>
-                  <li>Turning：EADGBE(Standard)</li>
-                  <li><a href="#">創作者：X羊</a></li>
-                  <li>定價：＄250</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+    </div>
+    <div class="row search-page my-32 d-none">
+      <div class="row mb-16">
+        <h3 class="search-title">目前搜尋結果數量:</h3>
+        <button class="btn btn-primary btn-research col-md-3 mb-16">
+          回到熱門排行
+        </button>
+        <div class="row course-search justify-content-md-center"></div>
+      </div>
     </div>
   </section>
 </main>
+
+<section class="bs5-modal">
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-2">
+        <div class="modal-header border-0 p-4">
+          <img
+            class="img-fluid object-cover w-100"
+            src="https://img-c.udemycdn.com/course/480x270/2269508_5c40.jpg"
+            alt=""
+          />
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title text-black" id="exampleModalLabel">
+            8 Pop Songs for Finger-Style Guitar
+          </h5>
+          <button
+            class="btn btn-primary w-75 text-white btn-cart"
+            data-id="${item.id}"
+          >
+            新增至購物車
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
     <footer class="footer border-top bg-black">

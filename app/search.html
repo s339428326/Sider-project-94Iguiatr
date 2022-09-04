@@ -6,7 +6,12 @@ current: index
 ---
 
 <main>
-  <section>
+  <section class="position-relative">
+    <img
+      class="sider-guitar-search"
+      src="./assets/images/side-guitar-1.png"
+      alt=""
+    />
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
@@ -53,10 +58,14 @@ current: index
           </div>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block search-sliderImage" alt="..." />
+          <img
+            src="./assets/images/ballun.jpeg"
+            class="d-block search-sliderImage"
+            alt="..."
+          />
           <div class="position-absolute top-50 start-50 translate-middle w-100">
             <div class="d-flex align-items-center flex-column">
-              <h5 class="mb-24">XX大專院校吉他邀請賽</h5>
+              <h5 class="mb-24">XXXX公益募資表演</h5>
               <ul class="list-unstyled">
                 <li class="mb-4">主辦：克來博大學</li>
                 <li class="mb-4">報名日期：2022/10/22~11/30</li>
@@ -101,8 +110,8 @@ current: index
   </section>
   <section class="container">
     <div class="row justify-content-center my-32">
-      <div class="col-8">
-        <div class="search bg-light border border-2 border-primary mb-24">
+      <div class="col-md-8">
+        <div class="search bg-light border border-2 border-primary">
           <form
             class="d-flex align-items-center justify-content-between"
             action=""
@@ -117,15 +126,14 @@ current: index
               class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
               aria-label="Default select example"
             >
-              <option selected="">全部</option>
-              <option value="1">創作者</option>
-              <option value="2">特殊調弦</option>
-              <option value="3">找課程</option>
-              <option value="3">專輯</option>
+              <option selected="" value="0">請選擇</option>
+              <option value="1">找課程</option>
+              <!-- <option value="2">文章</option>
               <option value="3">吉他譜</option>
-              <option value="3">文章</option>
+              <option value="4">創作者</option>
+              <option value="5">特殊調弦</option> -->
             </select>
-            <a type="submit" class="border-0 rounded-0" href="#">
+            <a type="submit" class="border-0 rounded-0 search-btn" href="#">
               <span
                 class="text-white material-icons-outlined d-block bg-primary p-8"
               >
@@ -137,202 +145,192 @@ current: index
       </div>
     </div>
   </section>
-  <section class="container">
-    <div class="row">
-      <ul class="list-unstyled col-6 col-md-4">
-        <h2 class="mb-32">熱門吉他譜</h2>
-        <li class="d-flex mb-24">
-          <a class="w-100" href="#">
-            <div
-              class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-column flex-lg-row rounded-3"
-            >
-              <div class="me-md-8">
-                <img
-                  class="object-cover rounded-circle"
-                  src="./assets/images/deer.png"
-                  alt="album-1"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div>
-                <p
-                  class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
-                >
-                  森林馬戲團
-                </p>
-                <ul class="list-unstyled text-black">
-                  <li>曲名：動物ＸＸ</li>
-                  <li>Turning：EADGBE(Standard)</li>
-                  <li>創作者：X羊</li>
-                  <li>定價：＄250</li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="d-flex mb-24">
-          <a class="w-100" href="#">
-            <div
-              class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-column flex-lg-row rounded-3"
-            >
-              <div class="me-md-8">
-                <img
-                  class="object-cover rounded-circle"
-                  src="./assets/images/dog.png"
-                  alt="album-1"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div>
-                <p
-                  class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
-                >
-                  森林馬戲團
-                </p>
-                <ul class="list-unstyled text-black">
-                  <li>曲名：動物ＸＸ</li>
-                  <li>Turning：EADGBE(Standard)</li>
-                  <li>創作者：X羊</li>
-                  <li>定價：＄250</li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="d-flex mb-24">
-          <a class="w-100" href="#">
-            <div
-              class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-column flex-lg-row rounded-3"
-            >
-              <div class="me-md-8">
-                <img
-                  class="object-cover rounded-circle"
-                  src="./assets/images/Anhui-Bear.png"
-                  alt="album-1"
-                  width="100"
-                  height="100"
-                />
-              </div>
-              <div>
-                <p
-                  class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
-                >
-                  森林馬戲團
-                </p>
-                <ul class="list-unstyled text-black">
-                  <li>曲名：動物ＸＸ</li>
-                  <li>Turning：EADGBE(Standard)</li>
-                  <li>創作者：X羊</li>
-                  <li>定價：＄250</li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <div class="col-md-8">
-        <h2 class="mb-32">熱門課程</h2>
-        <div class="swiper swiper-container py-40">
-          <div class="swiper-wrapper text-white">
-            <div class="swiper-slide border text-center rounded-2">
-              <div class="course-card bg-light text-black">
+
+  <section class="container search-content">
+    <div class="row no-search-page">
+      <div class="col">
+        <h2 class="course-list-title mb-32">熱門課程</h2>
+        <div class="swiper swiper-container mb-32">
+          <div class="course-list swiper-wrapper text-white d-flex">
+            <!-- <div class="swiper-slide">
+              <div class="course-card bg-light text-black rounded-2">
                 <div class="course-head">
                   <img
-                    class="object-cover w-100"
+                    class="object-cover rounded-top"
                     src="./assets/images/player-guitar.png"
                     alt="player-guitar"
+                    width="340"
                     height="200"
                   />
-                  <div class="d-flex">
+                  <div class="d-flex fs-5 justify-content-center mt-8">
                     <p class="me-4">課程:</p>
                     <p class="course-name">course.name</p>
                   </div>
                 </div>
-                <div class="course-body d-flex gap-8">
-                  <div>
+                <div class="course-body d-flex gap-8 px-16">
+                  <div class="text-center">
                     <p>學生人數</p>
                     <p class="course-student">course.student</p>
                   </div>
-                  <div>
+                  <div class="text-center">
                     <p>課程分數</p>
                     <p class="course-score">course.score</p>
                   </div>
-                  <div>
+                  <div class="text-center">
                     <p>課程總時數</p>
                     <p class="course-time">course.time</p>
                   </div>
                 </div>
-                <div class="course-footer"></div>
+                <div class="course-footer px-16 pb-16">
+                  <div class="d-flex">
+                    <p class="mb-0">定價：＄</p>
+                    <p class="course-price pe-8 mb-0">course.price</p>
+                    <p
+                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
+                    >
+                      course.discountPric
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Drifting
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Sungha Xung
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              葉X峻彈吉他
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Andy MxKee
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Grxvity
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Wen吉他X
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Sevenxh
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              Rylynn
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              slide
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              slide
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              slide
-            </div>
-            <div
-              class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
-            >
-              slide
-            </div>
+            </div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
-        <h2 class="mb-32">熱門</h2>
-        <ul class="list-unstyled"></ul>
+        <ul class="list-unstyled col-md-4 tab-list mb-32">
+          <h2 class="mb-32 tab-list-title">熱門吉他譜</h2>
+          <li class="d-flex mb-24">
+            <div
+              class="d-flex align-items-center gap-8 w-100 justify-content-around"
+              href="#"
+            >
+              <p class="fs-1 fw-bold text-white">-1</p>
+              <div
+                class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-row flex-md-column flex-lg-row rounded-3 gap-8"
+              >
+                <div>
+                  <img
+                    class="object-cover rounded-circle"
+                    src="./assets/images/deer.png"
+                    alt="album-1"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+                <div>
+                  <p
+                    class="text-center text-md-start text-black fw-bold mb-4 mt-4 mt-md-0"
+                  >
+                    森林馬戲團
+                  </p>
+                  <ul class="list-unstyled text-black">
+                    <li>曲名：動物ＸＸ</li>
+                    <li>Turning：EADGBE(Standard)</li>
+                    <li><a href="#">創作者：X羊</a></li>
+                    <li>定價：＄250</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h2 class="article-list-title my-32">熱門文章</h2>
+        <ul class="row list-unstyled gap-16 article-list">
+          <li>
+            <div class="article d-flex text-white gap-16" href="#">
+              <div>
+                <img
+                  class="object-cover"
+                  src="./assets/images/guitar-player-2.png"
+                  alt=""
+                  width="150"
+                  height="150"
+                />
+              </div>
+              <div>
+                <div class="d-flex justify-content-between">
+                  <p class="articles-title fs-5 mb-4">
+                    <a class="text-white" href="#">掌握吉他音階用法</a>
+                  </p>
+                  <div class="d-flex">
+                    <p>作者：</p>
+                    <p>
+                      <a
+                        class="articles-author text-white text-decoration-underline"
+                        href="#"
+                        >魯凱</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <p class="articles-title articles-content">
+                  Minor Pentatonic Scale, Major Pentatonic Scale, Mix Pentatonic
+                  Scale, Major Scale...等
+                </p>
+                <div class="d-flex justify-content-between">
+                  <time>2022/10/17</time>
+                  <div class="d-flex text-info">
+                    <p>觀看次數：</p>
+                    <p class="articles-viewer">500</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row search-page my-32 d-none">
+      <div class="row mb-16">
+        <h3 class="search-title">目前搜尋結果數量:</h3>
+        <button class="btn btn-primary btn-research col-md-3 mb-16">
+          回到熱門排行
+        </button>
+        <div class="row course-search justify-content-md-center"></div>
       </div>
     </div>
   </section>
 </main>
+
+<section class="bs5-modal">
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-2">
+        <div class="modal-header border-0 p-4">
+          <img
+            class="img-fluid object-cover w-100"
+            src="https://img-c.udemycdn.com/course/480x270/2269508_5c40.jpg"
+            alt=""
+          />
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title text-black" id="exampleModalLabel">
+            8 Pop Songs for Finger-Style Guitar
+          </h5>
+          <button
+            class="btn btn-primary w-75 text-white btn-cart"
+            data-id="${item.id}"
+          >
+            新增至購物車
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

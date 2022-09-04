@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%- title %></title>
+    <!-- Boostrap5 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/style/all.css" />
-    <link rel="preconnect" hresf="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <!-- google fonts Anto-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- google icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
     />
+    <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- all.scss -->
+    <link rel="stylesheet" href="./assets/style/all.css" />
   </head>
 
   <body>
-    <header>
+    <header class="sticky-top">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
-          <a class="bg-primary text-white fs-1 px-16 px-md-102 title" href="./index.html"
+          <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
           <ul class="d-flex list-unstyled mb-0 align-items-stretch">
@@ -52,8 +55,8 @@
       <div class="container py-104">
         <div class="row flex-column align-items-center">
           <div class="d-flex justify-content-center align-items-center mb-16">
-            <span class="fs-4 me-8">Logo</span>
-            <a class="text-white fs-5 mb-0" href="#">94 | 指彈</a>
+            <span class="bg-primary rounded-1 p-4 fs-4 me-8 font-monospace">Logo</span>
+            <a class="text-white fs-5 mb-0 font-monospace" href="./">94 | Guitar</a>
           </div>
 
           <div class="col-md-2 mb-32">
@@ -147,6 +150,7 @@
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/all.js"></script>
   </body>
 </html>

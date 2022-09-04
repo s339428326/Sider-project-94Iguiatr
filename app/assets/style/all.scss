@@ -98,3 +98,30 @@
 .object-cover {
   object-fit: cover;
 }
+
+//search
+
+.sider-guitar-search {
+  position: absolute;
+  max-height: 912px;
+  object-fit: cover;
+  right: 0;
+  top: 700px;
+  z-index: -12;
+  opacity: 0.6;
+}
+
+//member
+.h-475 {
+  height: 475px;
+}
+
+.fs-7 {
+  font-size: 0.375rem;
+}
+
+.swiper {
+  .swiper-slide {
+    width: auto;
+  }
+}

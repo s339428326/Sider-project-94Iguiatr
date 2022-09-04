@@ -25,16 +25,35 @@ var swiper = new Swiper(".swiper-container", {
   spaceBetween: 16,
   paginationClickable: false,
   freeMode: true,
+  autoplay: {
+    delay: 5000,
+  },
 });
 
-//fake
-// const fakeSearch = document.querySelector(".fake-search");
+var mySwiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  slidesPerGroup: 4,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  freeMode: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
-// fakeSearch.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter") {
-//     console.log("stop");
-//     window.location.href = "https://www.google.com/";
-//   }
-// });
+//url checker
+const urlLocation = window.location.href.split("/");
+const fileName = urlLocation[urlLocation.length - 1];
 
-// ../../search.html
+//Api data Array
+const userData = [];
+//搜尋結果Array
+let filteredData = [];
+//購物車 Array
+const cartData = [];

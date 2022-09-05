@@ -3,7 +3,6 @@ if (fileName.toLowerCase().includes("search")) {
   const VER_URL = BASE_URL + "/FakeApi";
   const POSTRE_URL = VER_URL + "/MOCK_DATA.json";
 
-  const body = document.querySelector("body");
   //search bar
   const fakeSearch = document.querySelector(".fake-search");
   const formSelect = document.querySelector(".form-select");
@@ -20,6 +19,8 @@ if (fileName.toLowerCase().includes("search")) {
   //research btn
   const searchTitle = document.querySelector(".search-title");
   const researchBtn = document.querySelector(".btn-research");
+  //bs5 modal
+  const modalContent = document.querySelector(".modal-content");
 
   //建立課程HTML
   function renderCourseList(data, className) {
@@ -31,10 +32,10 @@ if (fileName.toLowerCase().includes("search")) {
     data.forEach((item) => {
       html += `
             <div class="${styleSwitch}">
-            <div class="course-card bg-light text-black rounded-2 me-16">
+            <div class="course-card bg-light text-black rounded-2 me-md-16">
               <div class="course-head">
                 <img
-                  class="object-cover rounded-top justify-content-center img-fluid"
+                  class="object-cover rounded-top justify-content-center img-fluid w-100"
                   src="${item.course.img}"
                   alt="player-guitar"
                 />
@@ -42,37 +43,22 @@ if (fileName.toLowerCase().includes("search")) {
                   <p class="course-name">${item.course.name}</p>
                 </div>
               </div>
-              <div class="course-body d-flex gap-8 px-16 justify-content-center">
-                <div class="text-center">
-                  <p>學生人數</p>
-                  <p class="course-student">${item.course.studentNumber}</p>
-                </div>
-                <div class="text-center">
-                  <p>課程分數</p>
-                  <p class="course-score">${item.course.rating}</p>
-                </div>
-                <div class="text-center">
-                  <p>課程總時數</p>
-                  <p class="course-time">${item.course.courseHours}</p>
-                </div>
-              </div>
-              <div class="course-footer px-16 pb-16">
-                <div class="d-flex justify-content-center fs-5">
-                  <p class="mb-0">定價：</p>
-                  <p class="course-price pe-8 mb-0">${item.course.discountPrice}</p>
+              <div class="course-footer bg-primary rounded-bottom">
+                <div class="d-flex justify-content-center border-bottom py-8">
+                  <p class="course-price pe-8 mb-0">超值價格：${item.course.discountPrice}</p>
                   <p
                     class="course-discountPrice text-decoration-line-through mb-0 text-info"
                   >
                     ${item.course.price}
                   </p>
                 </div>
-                <div class="d-flex justify-content-around  mt-8 btn-course">
-                  <button class="btn btn-primary btn-cart" data-id="${item.id}">
+                <div class="d-flex btn-course bg-secondary rounded-bottom">
+                  <div class="btn btn-cart py-8 border-end rounded-0 w-50" data-id="${item.id}">
                     加入購物車
-                  </button>
-                  <button class="btn btn-primary btn-more" data-id="${item.id}" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  </div>
+                  <div class="btn btn-more py-8 rounded-0 w-50" data-id="${item.id}" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     More
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -83,26 +69,7 @@ if (fileName.toLowerCase().includes("search")) {
     className.innerHTML = html;
   }
 
-  function addCart(id) {
-    const cartItme = userData.find((item) => item.id === id);
-    if (cartData.some((cart) => cart.id === id)) {
-      return alert("此項目已在購物車內");
-    }
-    cartData.push(cartItme);
-    localStorage.setItem("cart", JSON.stringify(cartData));
-  }
-
-  //購物車功能(未完成) localhost
-  body.addEventListener("click", (e) => {
-    const targetNumber = Number(e.target.dataset.id);
-    if (e.target.matches(".btn-cart")) {
-      addCart(targetNumber);
-    } else if (e.target.matches(".btn-more")) {
-      console.log("bs-5 modal");
-    }
-  });
-
-  //搜尋功能(click, keydown)
+  //搜尋功能
   function searchkeyWord() {
     //暫時需要使用者選擇收尋項目
     if (formSelect.value === "0") return alert("請選擇搜索項目");
@@ -153,7 +120,6 @@ if (fileName.toLowerCase().includes("search")) {
     fakeSearch.value = "";
   }
 
-  //搜尋功能(未完成)
   searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     searchkeyWord();
@@ -166,6 +132,7 @@ if (fileName.toLowerCase().includes("search")) {
     }
   });
 
+  //重新搜索按鈕
   researchBtn.addEventListener("click", (e) => {
     console.log("click");
     noSearchRow.classList.remove("d-none");

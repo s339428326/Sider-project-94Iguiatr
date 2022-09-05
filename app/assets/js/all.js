@@ -61,19 +61,20 @@ var mySwiper = new Swiper(".mySwiper", {
 const urlLocation = window.location.href.split("/");
 const fileName = urlLocation[urlLocation.length - 1];
 
-//Api data Array
+//Api data
 const userData = [];
-//搜尋結果Array
+//搜尋結果
 let filteredData = [];
-//購物車 Array
+//購物車
 let cartData = [];
+let priceTotal = 0;
 const body = document.querySelector("body");
 const cartModal = document.querySelector(".cart-modal");
-
-//網頁重新執行時
-getloaclCart();
+const cartPriceTotal = document.querySelector(".cart-price-total");
 
 //取得本地購物車內容
+getloaclCart();
+
 function getloaclCart() {
   let cartlist = JSON.parse(localStorage.getItem("cart"));
   if (cartlist !== null) {
@@ -84,6 +85,19 @@ function getloaclCart() {
   } else {
     cartData = [];
   }
+}
+
+//價格格式整理
+function priceStringToNumber(string) {
+  let newWord = "";
+  for (const word of string) {
+    if (word === "$" || word === ",") {
+      newWord += "";
+    } else {
+      newWord += word;
+    }
+  }
+  return Number(newWord);
 }
 
 function creatCartHTML(item) {
@@ -114,13 +128,24 @@ function addCart(id) {
 
   cartData.push(cartItme);
   localStorage.setItem("cart", JSON.stringify(cartData));
+
+  //updata price
+  priceTotal += priceStringToNumber(cartItme.course.discountPrice);
+  cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
+  //updata HTML
   creatCartHTML(cartItme);
 }
 
-//d
+//刪除購物車項目
 function deletCart(id) {
-  const cartItme = cartData.findIndex((item) => item.id === id);
-  cartData.splice(cartItme, 1);
+  const cartIndex = cartData.findIndex((item) => item.id === id);
+
+  //update price
+  const cartItme = userData.find((item) => item.id === id);
+  priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
+  cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
+
+  cartData.splice(cartIndex, 1);
   localStorage.setItem("cart", JSON.stringify(cartData));
   cartModal.innerHTML = "";
   cartData.forEach((item) => {

@@ -74,14 +74,19 @@ const cartPriceTotal = document.querySelector(".cart-price-total");
 
 //取得本地購物車內容
 getloaclCart();
+console.log(cartData);
 
 function getloaclCart() {
   let cartlist = JSON.parse(localStorage.getItem("cart"));
   if (cartlist !== null) {
     cartData = cartlist;
     cartData.forEach((item) => {
+      //updata price
+      priceTotal += priceStringToNumber(item.course.discountPrice);
       creatCartHTML(item);
     });
+    //updata price HTML
+    cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
   } else {
     cartData = [];
   }
@@ -138,10 +143,12 @@ function addCart(id) {
 
 //刪除購物車項目
 function deletCart(id) {
+  //find index
   const cartIndex = cartData.findIndex((item) => item.id === id);
-
+  console.log(cartIndex);
   //update price
-  const cartItme = userData.find((item) => item.id === id);
+  const cartItme = cartData.find((item) => item.id === id);
+  console.log(cartItme);
   priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
   cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
 

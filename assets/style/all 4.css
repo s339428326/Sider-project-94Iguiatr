@@ -14421,4 +14421,16 @@ fieldset:disabled .btn {
   opacity: 0.6;
 }
 
+.h-475 {
+  height: 475px;
+}
+
+.fs-7 {
+  font-size: 0.375rem;
+}
+
+.swiper .swiper-slide {
+  width: auto;
+}
+
 /*# sourceMappingURL=all.css.map */

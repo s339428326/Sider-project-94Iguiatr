@@ -37,18 +37,27 @@ AOS.init({
 var swiper = new Swiper(".swiper-container", {
   pagination: ".swiper-pagination",
   slidesPerView: "auto",
+  // slidesPerView: 3,
   spaceBetween: 16,
   paginationClickable: false,
-  freeMode: true,
-  autoplay: {
-    delay: 5000
+  freeMode: true
+});
+var swiper = new Swiper(".swiper-course", {
+  slidesPerView: 1,
+  spaceBetween: 9,
+  paginationClickable: false,
+  freeMode: false,
+  breakpoints: {
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 16
+    }
   }
 });
 var mySwiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
   spaceBetween: 16,
   slidesPerGroup: 4,
-  loop: true,
   loopFillGroupWithBlank: true,
   freeMode: true,
   pagination: {
@@ -69,7 +78,82 @@ var userData = []; //搜尋結果Array
 var filteredData = []; //購物車 Array
 
 var cartData = [];
-"use strict";
+var body = document.querySelector("body");
+var cartModal = document.querySelector(".cart-modal"); //網頁重新執行時
+
+getloaclCart(); //取得本地購物車內容
+
+function getloaclCart() {
+  var cartlist = JSON.parse(localStorage.getItem("cart"));
+
+  if (cartlist !== null) {
+    cartData = cartlist;
+    cartData.forEach(function (item) {
+      creatCartHTML(item);
+    });
+  } else {
+    cartData = [];
+  }
+}
+
+function creatCartHTML(item) {
+  cartModal.innerHTML += "\n<div class=\"d-flex  justify-content-around p-16 border border-primary shadow-lg rounded-2\">\n  <img class=\"object-cover\" src=\"".concat(item.course.img, "\" alt=\"\" width=\"125\" height=\"125\">\n  <div>\n    <p>\u8AB2\u7A0B\uFF1A").concat(item.course.name, "</p>\n    <div class=\"d-flex gap-8 \">\n      <p>\u50F9\u683C\uFF1A</p>\n      <p>").concat(item.course.discountPrice, "</p>\n      <p class=\"text-info text-decoration-line-through \">").concat(item.course.price, "</p>\n      <div class=\"d-flex\">\n        <button class=\"btn btn-danger\" data-id = \"").concat(item.id, "\">\u522A\u9664</button>\n      </div>\n    </div>\n  </div>\n</div>\n  ");
+} //加入購物車功能
+
+
+function addCart(id) {
+  var cartItme = userData.find(function (item) {
+    return item.id === id;
+  });
+
+  if (cartData.some(function (cart) {
+    return cart.id === id;
+  })) {
+    return alert("此項目已在購物車內");
+  }
+
+  cartData.push(cartItme);
+  localStorage.setItem("cart", JSON.stringify(cartData));
+  creatCartHTML(cartItme);
+} //d
+
+
+function deletCart(id) {
+  var cartItme = cartData.findIndex(function (item) {
+    return item.id === id;
+  });
+  cartData.splice(cartItme, 1);
+  localStorage.setItem("cart", JSON.stringify(cartData));
+  cartModal.innerHTML = "";
+  cartData.forEach(function (item) {
+    creatCartHTML(item);
+  });
+} //課程彈跳視窗
+
+
+function courseModal(id) {
+  var item = userData.find(function (item) {
+    return item.id === id;
+  });
+  modalContent.innerHTML = "\n    <div class=\"modal-header border-0 p-4\">\n    <img\n      class=\"object-cover img-fuild w-100\"\n      src=\" ".concat(item.course.img, "\"\n      alt=\"\"\n    />\n  </div>\n  <div class=\"modal-body text-black\">\n    <h5 class=\"modal-title mb-8\" id=\"exampleModalLabel\">\n      ").concat(item.course.name, "\n    </h5>\n\n    <div\n      class=\"d-flex justify-content-around my-16 flex-column flex-md-row justify-content-center align-items-center\"\n    >\n      <img\n        class=\"rounded-circle\"\n        src=\"").concat(item.avatar, "\"\n        alt=\"\"\n        width=\"128\"\n        height=\"128\"\n      />\n      <div class=\"list-unstyled\">\n        <div>\n          <p class=\"text-center text-md-start\">\n            \u8B1B\u5E2B\uFF1A<a href=\"#\"\n              >").concat(item.last_name + " " + item.first_name, "</a\n            >\n          </p>\n          <ul\n            class=\"list-unstyled bg-primary d-flex rounded-3 p-8 gap-4 justify-content-around\"\n          >\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/instagram.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n              /></a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/facebook.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/youtube.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n          </ul>\n        </div>\n\n        <div class=\"d-flex gap-8\">\n          <ul class=\"list-unstyled\">\n            <li>\u6559\u5B78\u7D93\u6B77\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n          <ul class=\"list-unstyled\">\n            <li>\u53C3\u8CFD\u7D93\u9A57\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n        </div>\n      </div>\n      <div></div>\n    </div>\n    <div class=\"row border text-center mb-32\">\n      <div class=\"col-4 border-end\">\n        <p>\u5B78\u751F\u4EBA\u6578</p>\n        <p class=\"mb-0\">").concat(item.course.studentNumber, "</p>\n      </div>\n      <div class=\"col-4 border-end\">\n        <p>\u8AB2\u7A0B\u5206\u6578</p>\n        <p class=\"course-score mb-0\">").concat(item.course.rating, "</p>\n      </div>\n      <div class=\"col-4\">\n        <p>\u8AB2\u7A0B\u7E3D\u6642\u6578</p>\n        <p class=\"course-time mb-0\">").concat(item.course.courseHours, "</p>\n      </div>\n    </div>\n\n    <div class=\"d-flex justify-content-around\">\n      <div>\n        <h5>\u8AB2\u7A0B\u5167\u5BB9\uFF1A</h5>\n        <ul>\n          <li>item1</li>\n          <li>item2</li>\n          <li>item3</li>\n          <li>item4</li>\n        </ul>\n      </div>\n\n      <div>\n        <h5 class=\"fw-bold\">\u6B64\u8AB2\u7A0B\u6B0A\u76CA\uFF1A</h5>\n        <ul class=\"list-unstyled\">\n          <li>30 \u5929\u9000\u6B3E\u4FDD\u8B49</li>\n          <li>\u900F\u904E\u88DD\u7F6E\u8207\u96FB\u8996\u5B58\u53D6</li>\n          <li>\u5B8C\u6574\u7D42\u8EAB\u5B58\u53D6\u6B0A</li>\n          <li>\u7D50\u696D\u8B49\u66F8</li>\n        </ul>\n      </div>\n    </div>\n    <ul class=\"d-flex gap-16 list-unstyled justify-content-center\">\n      <li><a href=\"#\">\u5206\u4EAB</a></li>\n      <li><a href=\"#\">\u5C07\u6B64\u8AB2\u7A0B\u8D08\u9001</a></li>\n      <li><a href=\"#\">\u5957\u7528\u512A\u60E0\u5377</a></li>\n    </ul>\n  </div>\n  <div class=\"modal-footer\">\n    <div class=\"d-flex gap-8\">\n      <p class=\"fs-5 text-black\">\u5B9A\u50F9\uFF1A").concat(item.course.discountPrice, "</p>\n      <p\n        class=\"course-discountPrice text-decoration-line-through text-info mt-auto\"\n      >\n        ").concat(item.course.price, "\n      </p>\n    </div>\n    <button\n      class=\"btn btn-primary w-100 text-white btn-cart mb-8\"\n      data-id=\"").concat(item.id, "\"\n    >\n      \u65B0\u589E\u81F3\u8CFC\u7269\u8ECA\n    </button>\n    <button\n      type=\"button\"\n      class=\"btn btn-secondary w-100\"\n      data-bs-dismiss=\"modal\"\n    >\n      Close\n    </button>\n  </div>\n      ");
+} //確認點擊購物車或者是more btn
+
+
+body.addEventListener("click", function (e) {
+  var targetNumber = Number(e.target.dataset.id);
+
+  if (e.target.matches(".btn-cart")) {
+    addCart(targetNumber);
+  }
+
+  if (e.target.matches(".btn-more")) {
+    courseModal(targetNumber);
+  }
+
+  if (e.target.matches(".btn-danger")) {
+    deletCart(targetNumber);
+  }
+});
 "use strict";
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -91,28 +175,12 @@ if (fileName.toLowerCase().includes("search")) {
 
     var styleSwitch = filteredData.length ? "col-md-4 mb-24" : "swiper-slide";
     data.forEach(function (item) {
-      html += "\n            <div class=\"".concat(styleSwitch, "\">\n            <div class=\"course-card bg-light text-black rounded-2 me-16\">\n              <div class=\"course-head\">\n                <img\n                  class=\"object-cover rounded-top justify-content-center img-fluid\"\n                  src=\"").concat(item.course.img, "\"\n                  alt=\"player-guitar\"\n                />\n                <div class=\"d-flex justify-content-center mt-8\">\n                  <p class=\"course-name\">").concat(item.course.name, "</p>\n                </div>\n              </div>\n              <div class=\"course-body d-flex gap-8 px-16 justify-content-center\">\n                <div class=\"text-center\">\n                  <p>\u5B78\u751F\u4EBA\u6578</p>\n                  <p class=\"course-student\">").concat(item.course.studentNumber, "</p>\n                </div>\n                <div class=\"text-center\">\n                  <p>\u8AB2\u7A0B\u5206\u6578</p>\n                  <p class=\"course-score\">").concat(item.course.rating, "</p>\n                </div>\n                <div class=\"text-center\">\n                  <p>\u8AB2\u7A0B\u7E3D\u6642\u6578</p>\n                  <p class=\"course-time\">").concat(item.course.courseHours, "</p>\n                </div>\n              </div>\n              <div class=\"course-footer px-16 pb-16\">\n                <div class=\"d-flex justify-content-center fs-5\">\n                  <p class=\"mb-0\">\u5B9A\u50F9\uFF1A</p>\n                  <p class=\"course-price pe-8 mb-0\">").concat(item.course.discountPrice, "</p>\n                  <p\n                    class=\"course-discountPrice text-decoration-line-through mb-0 text-info\"\n                  >\n                    ").concat(item.course.price, "\n                  </p>\n                </div>\n                <div class=\"d-flex justify-content-around  mt-8 btn-course\">\n                  <button class=\"btn btn-primary btn-cart\" data-id=\"").concat(item.id, "\">\n                    \u52A0\u5165\u8CFC\u7269\u8ECA\n                  </button>\n                  <button class=\"btn btn-primary btn-more\" data-id=\"").concat(item.id, "\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n                    More\n                  </button>\n                </div>\n              </div>\n            </div>\n          </div>\n");
+      html += "\n            <div class=\"".concat(styleSwitch, "\">\n            <div class=\"course-card bg-light text-black rounded-2 me-md-16\">\n              <div class=\"course-head\">\n                <img\n                  class=\"object-cover rounded-top justify-content-center img-fluid w-100\"\n                  src=\"").concat(item.course.img, "\"\n                  alt=\"player-guitar\"\n                />\n                <div class=\"d-flex justify-content-center mt-8\">\n                  <p class=\"course-name\">").concat(item.course.name, "</p>\n                </div>\n              </div>\n              <div class=\"course-footer bg-primary rounded-bottom\">\n                <div class=\"d-flex justify-content-center border-bottom py-8\">\n                  <p class=\"course-price pe-8 mb-0\">\u8D85\u503C\u50F9\u683C\uFF1A").concat(item.course.discountPrice, "</p>\n                  <p\n                    class=\"course-discountPrice text-decoration-line-through mb-0 text-info\"\n                  >\n                    ").concat(item.course.price, "\n                  </p>\n                </div>\n                <div class=\"d-flex btn-course bg-secondary rounded-bottom\">\n                  <div class=\"btn btn-cart py-8 border-end rounded-0 w-50\" data-id=\"").concat(item.id, "\">\n                    \u52A0\u5165\u8CFC\u7269\u8ECA\n                  </div>\n                  <div class=\"btn btn-more py-8 rounded-0 w-50\" data-id=\"").concat(item.id, "\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n                    More\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n");
     });
     className.innerHTML = html;
-  };
-
-  var addCart = function addCart(id) {
-    var cartItme = userData.find(function (item) {
-      return item.id === id;
-    });
-
-    if (cartData.some(function (cart) {
-      return cart.id === id;
-    })) {
-      return alert("此項目已在購物車內");
-    }
-
-    cartData.push(cartItme);
-    localStorage.setItem("cart", JSON.stringify(cartData));
-  }; //購物車功能(未完成) localhost
+  }; //搜尋功能
 
 
-  //搜尋功能(click, keydown)
   var searchkeyWord = function searchkeyWord() {
     //暫時需要使用者選擇收尋項目
     if (formSelect.value === "0") return alert("請選擇搜索項目"); //阻止輸入空字串
@@ -158,13 +226,11 @@ if (fileName.toLowerCase().includes("search")) {
     }
 
     fakeSearch.value = "";
-  }; //搜尋功能(未完成)
-
+  };
 
   var BASE_URL = "https://s339428326.github.io";
   var VER_URL = BASE_URL + "/FakeApi";
-  var POSTRE_URL = VER_URL + "/MOCK_DATA.json";
-  var body = document.querySelector("body"); //search bar
+  var POSTRE_URL = VER_URL + "/MOCK_DATA.json"; //search bar
 
   var fakeSearch = document.querySelector(".fake-search");
   var formSelect = document.querySelector(".form-select");
@@ -183,16 +249,9 @@ if (fileName.toLowerCase().includes("search")) {
   var searchRow = document.querySelector(".search-page"); //research btn
 
   var searchTitle = document.querySelector(".search-title");
-  var researchBtn = document.querySelector(".btn-research");
-  body.addEventListener("click", function (e) {
-    var targetNumber = Number(e.target.dataset.id);
+  var researchBtn = document.querySelector(".btn-research"); //bs5 modal
 
-    if (e.target.matches(".btn-cart")) {
-      addCart(targetNumber);
-    } else if (e.target.matches(".btn-more")) {
-      console.log("bs-5 modal");
-    }
-  });
+  var modalContent = document.querySelector(".modal-content");
   searchBtn.addEventListener("click", function (e) {
     e.preventDefault();
     searchkeyWord();
@@ -202,7 +261,8 @@ if (fileName.toLowerCase().includes("search")) {
       e.preventDefault();
       searchkeyWord();
     }
-  });
+  }); //重新搜索按鈕
+
   researchBtn.addEventListener("click", function (e) {
     console.log("click");
     noSearchRow.classList.remove("d-none");

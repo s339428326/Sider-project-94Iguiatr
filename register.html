@@ -37,7 +37,7 @@
           >
           <ul class="d-flex list-unstyled mb-0 align-items-stretch">
             <li class="border-start px-16 px-md-40 py-8 py-md-24">
-              <a href="#">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <span class="material-icons text-white"> shopping_cart </span>
               </a>
             </li>
@@ -245,6 +245,47 @@
         </p>
       </div>
     </footer>
+    <section class="bs5-modal">
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content text-black ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">購物車</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body cart-modal d-flex flex-column gap-32">
+              <!-- <div class="d-flex  justify-content-around p-16 border border-primary shadow-lg rounded-2 mb-32">
+                <img class="object-cover"
+                src="https://img-c.udemycdn.com/course/480x270/1057050_8ba2.jpg" 
+                alt=""
+                width="125"
+                height="125">
+                <div>
+                  <p>課程名稱：item1</p>
+                  <div class="d-flex gap-8 ">
+                    <p>價格</p>
+                    <p>$330</p>
+                    <p class="text-info text-decoration-line-through ">$2290</p>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-danger">刪除</button>
+                  </div>
+
+                </div>
+
+                
+              </div> -->
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

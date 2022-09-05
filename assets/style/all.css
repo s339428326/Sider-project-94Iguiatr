@@ -14311,6 +14311,10 @@ fieldset:disabled .btn {
   border-style: dashed !important;
 }
 
+.material-icons {
+  pointer-events: none;
+}
+
 .bt-line {
   border-bottom: 5px solid #eb7921;
   padding-bottom: 16px;

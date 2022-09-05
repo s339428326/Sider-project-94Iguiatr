@@ -90,6 +90,7 @@ var cartModal = document.querySelector(".cart-modal");
 var cartPriceTotal = document.querySelector(".cart-price-total"); //取得本地購物車內容
 
 getloaclCart();
+console.log(cartData);
 
 function getloaclCart() {
   var cartlist = JSON.parse(localStorage.getItem("cart"));
@@ -97,8 +98,12 @@ function getloaclCart() {
   if (cartlist !== null) {
     cartData = cartlist;
     cartData.forEach(function (item) {
+      //updata price
+      priceTotal += priceStringToNumber(item.course.discountPrice);
       creatCartHTML(item);
-    });
+    }); //updata price HTML
+
+    cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
   } else {
     cartData = [];
   }
@@ -157,13 +162,16 @@ function addCart(id) {
 
 
 function deletCart(id) {
+  //find index
   var cartIndex = cartData.findIndex(function (item) {
     return item.id === id;
-  }); //update price
+  });
+  console.log(cartIndex); //update price
 
-  var cartItme = userData.find(function (item) {
+  var cartItme = cartData.find(function (item) {
     return item.id === id;
   });
+  console.log(cartItme);
   priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
   cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
   cartData.splice(cartIndex, 1);

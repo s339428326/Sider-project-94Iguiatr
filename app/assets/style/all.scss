@@ -21,6 +21,19 @@
   }
 }
 
+.cart-counter {
+  position: absolute;
+  color: white;
+  top: 10px;
+  right: 30px;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+}
+
 .card-img-overlay {
   &::after {
     transition: all 0.35s ease;

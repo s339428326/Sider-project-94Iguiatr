@@ -114,7 +114,6 @@ if (fileName.toLowerCase().includes("search")) {
     if (filteredData.length) {
       renderCourseList(filteredData, courseSearch);
     } else {
-      renderCourseList(userData, courseList);
     }
 
     fakeSearch.value = "";

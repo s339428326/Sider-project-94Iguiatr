@@ -1,3 +1,5 @@
+/////////////////plug setting//////////////////
+//AOS
 AOS.init({
   // Global settings:
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -18,7 +20,7 @@ AOS.init({
   mirror: true, // whether elements should animate out while scrolling past them
   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
-
+//Swiper
 var swiper = new Swiper(".swiper-container", {
   pagination: ".swiper-pagination",
   slidesPerView: "auto",
@@ -56,6 +58,7 @@ var mySwiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+/////////////////////////////////////////////
 
 //url checker
 const urlLocation = window.location.href.split("/");
@@ -67,19 +70,29 @@ const userData = [];
 let filteredData = [];
 //購物車
 let cartData = [];
+
 let priceTotal = 0;
 const body = document.querySelector("body");
 const cartModal = document.querySelector(".cart-modal");
 const cartPriceTotal = document.querySelector(".cart-price-total");
+const cartCounter = document.querySelector(".cart-counter");
+const cartCounterCheck = document.querySelector(".cart-counter-check");
 
 //取得本地購物車內容
 getloaclCart();
-console.log(cartData);
 
 function getloaclCart() {
-  let cartlist = JSON.parse(localStorage.getItem("cart"));
-  if (cartlist !== null) {
+  let cartlist;
+  if (JSON.parse(localStorage.getItem("cart")) !== null) {
+    cartlist = JSON.parse(localStorage.getItem("cart"));
+  } else {
+    cartlist = [];
+  }
+  if (cartlist.length) {
     cartData = cartlist;
+    cartModal.innerHTML = "";
+    cartCounter.classList.remove("d-none");
+    cartCounter.innerHTML = `${cartData.length}`;
     cartData.forEach((item) => {
       //updata price
       priceTotal += priceStringToNumber(item.course.discountPrice);
@@ -89,6 +102,7 @@ function getloaclCart() {
     cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
   } else {
     cartData = [];
+    cartModal.innerHTML = `<p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>`;
   }
 }
 
@@ -138,6 +152,11 @@ function addCart(id) {
   priceTotal += priceStringToNumber(cartItme.course.discountPrice);
   cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
   //updata HTML
+  if (cartData.length === 1) {
+    cartModal.innerHTML = "";
+  }
+  cartCounter.classList.remove("d-none");
+  cartCounter.innerHTML = `${cartData.length}`;
   creatCartHTML(cartItme);
 }
 
@@ -146,18 +165,26 @@ function deletCart(id) {
   //find index
   const cartIndex = cartData.findIndex((item) => item.id === id);
   console.log(cartIndex);
+
   //update price
   const cartItme = cartData.find((item) => item.id === id);
-  console.log(cartItme);
   priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
   cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
 
+  //Delet item and item localStorage
+
   cartData.splice(cartIndex, 1);
   localStorage.setItem("cart", JSON.stringify(cartData));
-  cartModal.innerHTML = "";
-  cartData.forEach((item) => {
-    creatCartHTML(item);
-  });
+  if (cartData.length) {
+    cartModal.innerHTML = "";
+    cartData.forEach((item) => {
+      creatCartHTML(item);
+    });
+    cartCounter.innerHTML = `${cartData.length}`;
+  } else {
+    cartCounter.classList.add("d-none");
+    cartModal.innerHTML = `<p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>`;
+  }
 }
 
 //課程彈跳視窗
@@ -325,5 +352,12 @@ body.addEventListener("click", (e) => {
   }
   if (e.target.matches(".btn-danger")) {
     deletCart(targetNumber);
+  }
+});
+
+cartCounterCheck.addEventListener("click", (e) => {
+  if (!cartData.length) {
+    e.preventDefault();
+    return alert("購物車內目前無商品");
   }
 });

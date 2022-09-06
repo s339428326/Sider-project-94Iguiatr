@@ -6,6 +6,8 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+/////////////////plug setting//////////////////
+//AOS
 AOS.init({
   // Global settings:
   disable: false,
@@ -39,7 +41,8 @@ AOS.init({
   // whether elements should animate out while scrolling past them
   anchorPlacement: "top-bottom" // defines which position of the element regarding to window should trigger the animation
 
-});
+}); //Swiper
+
 var swiper = new Swiper(".swiper-container", {
   pagination: ".swiper-pagination",
   slidesPerView: "auto",
@@ -74,7 +77,8 @@ var mySwiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   }
-}); //url checker
+}); /////////////////////////////////////////////
+//url checker
 
 var urlLocation = window.location.href.split("/");
 var fileName = urlLocation[urlLocation.length - 1]; //Api data
@@ -87,16 +91,26 @@ var cartData = [];
 var priceTotal = 0;
 var body = document.querySelector("body");
 var cartModal = document.querySelector(".cart-modal");
-var cartPriceTotal = document.querySelector(".cart-price-total"); //取得本地購物車內容
+var cartPriceTotal = document.querySelector(".cart-price-total");
+var cartCounter = document.querySelector(".cart-counter");
+var cartCounterCheck = document.querySelector(".cart-counter-check"); //取得本地購物車內容
 
 getloaclCart();
-console.log(cartData);
 
 function getloaclCart() {
-  var cartlist = JSON.parse(localStorage.getItem("cart"));
+  var cartlist;
 
-  if (cartlist !== null) {
+  if (JSON.parse(localStorage.getItem("cart")) !== null) {
+    cartlist = JSON.parse(localStorage.getItem("cart"));
+  } else {
+    cartlist = [];
+  }
+
+  if (cartlist.length) {
     cartData = cartlist;
+    cartModal.innerHTML = "";
+    cartCounter.classList.remove("d-none");
+    cartCounter.innerHTML = "".concat(cartData.length);
     cartData.forEach(function (item) {
       //updata price
       priceTotal += priceStringToNumber(item.course.discountPrice);
@@ -106,6 +120,7 @@ function getloaclCart() {
     cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
   } else {
     cartData = [];
+    cartModal.innerHTML = "<p class=\"text-info text-center fs-5 py-104 mb-0\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>";
   }
 } //價格格式整理
 
@@ -157,6 +172,12 @@ function addCart(id) {
   priceTotal += priceStringToNumber(cartItme.course.discountPrice);
   cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD"); //updata HTML
 
+  if (cartData.length === 1) {
+    cartModal.innerHTML = "";
+  }
+
+  cartCounter.classList.remove("d-none");
+  cartCounter.innerHTML = "".concat(cartData.length);
   creatCartHTML(cartItme);
 } //刪除購物車項目
 
@@ -171,15 +192,22 @@ function deletCart(id) {
   var cartItme = cartData.find(function (item) {
     return item.id === id;
   });
-  console.log(cartItme);
   priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
-  cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
+  cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD"); //Delet item and item localStorage
+
   cartData.splice(cartIndex, 1);
   localStorage.setItem("cart", JSON.stringify(cartData));
-  cartModal.innerHTML = "";
-  cartData.forEach(function (item) {
-    creatCartHTML(item);
-  });
+
+  if (cartData.length) {
+    cartModal.innerHTML = "";
+    cartData.forEach(function (item) {
+      creatCartHTML(item);
+    });
+    cartCounter.innerHTML = "".concat(cartData.length);
+  } else {
+    cartCounter.classList.add("d-none");
+    cartModal.innerHTML = "<p class=\"text-info text-center fs-5 py-104 mb-0\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>";
+  }
 } //課程彈跳視窗
 
 
@@ -204,6 +232,12 @@ body.addEventListener("click", function (e) {
 
   if (e.target.matches(".btn-danger")) {
     deletCart(targetNumber);
+  }
+});
+cartCounterCheck.addEventListener("click", function (e) {
+  if (!cartData.length) {
+    e.preventDefault();
+    return alert("購物車內目前無商品");
   }
 });
 "use strict";
@@ -273,9 +307,7 @@ if (fileName.toLowerCase().includes("search")) {
 
     if (filteredData.length) {
       renderCourseList(filteredData, courseSearch);
-    } else {
-      renderCourseList(userData, courseList);
-    }
+    } else {}
 
     fakeSearch.value = "";
   };

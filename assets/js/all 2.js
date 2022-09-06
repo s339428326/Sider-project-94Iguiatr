@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 AOS.init({
   // Global settings:
   disable: false,
@@ -71,17 +77,20 @@ var mySwiper = new Swiper(".mySwiper", {
 }); //url checker
 
 var urlLocation = window.location.href.split("/");
-var fileName = urlLocation[urlLocation.length - 1]; //Api data Array
+var fileName = urlLocation[urlLocation.length - 1]; //Api data
 
-var userData = []; //搜尋結果Array
+var userData = []; //搜尋結果
 
-var filteredData = []; //購物車 Array
+var filteredData = []; //購物車
 
 var cartData = [];
+var priceTotal = 0;
 var body = document.querySelector("body");
-var cartModal = document.querySelector(".cart-modal"); //網頁重新執行時
+var cartModal = document.querySelector(".cart-modal");
+var cartPriceTotal = document.querySelector(".cart-price-total"); //取得本地購物車內容
 
-getloaclCart(); //取得本地購物車內容
+getloaclCart();
+console.log(cartData);
 
 function getloaclCart() {
   var cartlist = JSON.parse(localStorage.getItem("cart"));
@@ -89,11 +98,41 @@ function getloaclCart() {
   if (cartlist !== null) {
     cartData = cartlist;
     cartData.forEach(function (item) {
+      //updata price
+      priceTotal += priceStringToNumber(item.course.discountPrice);
       creatCartHTML(item);
-    });
+    }); //updata price HTML
+
+    cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
   } else {
     cartData = [];
   }
+} //價格格式整理
+
+
+function priceStringToNumber(string) {
+  var newWord = "";
+
+  var _iterator = _createForOfIteratorHelper(string),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var word = _step.value;
+
+      if (word === "$" || word === ",") {
+        newWord += "";
+      } else {
+        newWord += word;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return Number(newWord);
 }
 
 function creatCartHTML(item) {
@@ -113,16 +152,29 @@ function addCart(id) {
   }
 
   cartData.push(cartItme);
-  localStorage.setItem("cart", JSON.stringify(cartData));
+  localStorage.setItem("cart", JSON.stringify(cartData)); //updata price
+
+  priceTotal += priceStringToNumber(cartItme.course.discountPrice);
+  cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD"); //updata HTML
+
   creatCartHTML(cartItme);
-} //d
+} //刪除購物車項目
 
 
 function deletCart(id) {
-  var cartItme = cartData.findIndex(function (item) {
+  //find index
+  var cartIndex = cartData.findIndex(function (item) {
     return item.id === id;
   });
-  cartData.splice(cartItme, 1);
+  console.log(cartIndex); //update price
+
+  var cartItme = cartData.find(function (item) {
+    return item.id === id;
+  });
+  console.log(cartItme);
+  priceTotal -= priceStringToNumber(cartItme.course.discountPrice);
+  cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
+  cartData.splice(cartIndex, 1);
   localStorage.setItem("cart", JSON.stringify(cartData));
   cartModal.innerHTML = "";
   cartData.forEach(function (item) {

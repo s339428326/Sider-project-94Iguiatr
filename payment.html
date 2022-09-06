@@ -53,98 +53,48 @@
 
     
 <main>
-  <section class="my-48">
-    <div class="container">
-      <div class="row">
-        <div class="d-flex rounded-3 ps-md-0 flex-column flex-md-row">
-          <div class="col-md-6 order-1 order-md-0">
-            <img
-              class="rounded-3 login-image"
-              src="./assets/images/welcome.jpeg"
-              alt="welcome"
-            />
-          </div>
-          <div class="col-md-6 mb-24 mb-md-0">
-            <div class="bg-white ms-0 ms-md-24 rounded-3 px-80 py-40">
-              <h1 class="text-black fs-2 mb-24">註冊</h1>
-              <form action="">
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="email" id="email"
-                    >註冊信箱</label
-                  >
-                  <input
-                    class="border border-primary border-1 rounded-1 py-6 px-8"
-                    type="email"
-                    id="email"
-                    placeholder="請輸入信箱"
-                  />
-                </div>
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="password" id="password"
-                    >密碼</label
-                  >
-                  <input
-                    class="border border-primary border-1 rounded-1 py-6 px-8"
-                    type="password"
-                    id="password"
-                    placeholder="請輸入密碼"
-                  />
-                </div>
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="password" id="password"
-                    >請再次輸入密碼</label
-                  >
-                  <input
-                    class="border border-primary border-1 rounded-1 py-6 px-8"
-                    type="password"
-                    id="password"
-                    placeholder="請輸入密碼"
-                  />
-                </div>
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="password" id="password"
-                    >生日</label
-                  >
-                  <input
-                    class="border border-primary border-1 rounded-1 py-6 px-8"
-                    type="date"
-                    id="date"
-                    placeholder="生日"
-                  />
-                </div>
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="inlineFormSelectPref"
-                    >國家</label
-                  >
-                  <select
-                    class="form-select text-black border-primary"
-                    id="inlineFormSelectPref"
-                  >
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="d-flex flex-column mb-8">
-                  <label class="text-black mb-4" for="password" id="password"
-                    >暱稱</label
-                  >
-                  <input
-                    class="border border-primary border-1 rounded-1 py-6 px-8"
-                    type="text"
-                    id="text"
-                    placeholder="請輸入暱稱"
-                  />
-                </div>
-                <input
-                  class="btn btn-primary w-100 text-white fw-bold mt-32"
-                  type="submit"
-                  value="確認送出"
-                />
-              </form>
+  <section class="container">
+    <div class="row justify-content-center my-104">
+      <div class="col-md-6">
+        <div class="bg-white rounded-3 text-black p-32 text-black">
+          <h1 class="fs-3 mb-32">付款頁面</h1>
+          <form class="d-flex flex-column gap-24" action="">
+            <div class="d-flex flex-column gap-4">
+              <label for="card-number">信用卡卡號</label>
+              <input
+                id="card-number"
+                class="p-4 rounded-2 border"
+                type="text"
+                placeholder="Xxxx-xxxx-xxxx-xxxx"
+              />
             </div>
-          </div>
+            <div class="d-flex flex-column gap-4">
+              <label for="card-backnumber">安全碼</label>
+              <input
+                id="card-backnumber"
+                class="p-4 rounded-2 border"
+                type="password"
+                placeholder="***"
+              />
+            </div>
+            <div class="d-flex flex-column gap-4">
+              <label for="card-backnumber">有效日期</label>
+              <input
+                id="card-backnumber"
+                class="p-4 rounded-2 border"
+                type="date"
+                placeholder="(MM-YY)"
+              />
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fs-5 fw-bold mb-0 payment-total"></p>
+              <a
+                class="btn btn-primary text-white fw-bold btn-payment"
+                href="./payment-done.html"
+                >下一步</a
+              >
+            </div>
+          </form>
         </div>
       </div>
     </div>

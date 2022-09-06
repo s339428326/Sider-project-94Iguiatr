@@ -14335,14 +14335,21 @@ fieldset:disabled .btn {
 .cart-counter {
   position: absolute;
   color: white;
-  top: 10px;
-  right: 30px;
+  top: -6px;
+  right: 5px;
   font-size: 0.7rem;
   text-align: center;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: red;
+}
+
+@media (min-width: 768px) {
+  .cart-counter {
+    top: -10px;
+    right: 30px;
+  }
 }
 
 .card-img-overlay::after {

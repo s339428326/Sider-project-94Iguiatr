@@ -87,13 +87,16 @@ var userData = []; //搜尋結果
 
 var filteredData = []; //購物車
 
-var cartData = [];
+var cartData = []; //購買確認
+
+var confirmPurchase = false;
 var priceTotal = 0;
 var body = document.querySelector("body");
 var cartModal = document.querySelector(".cart-modal");
 var cartPriceTotal = document.querySelector(".cart-price-total");
 var cartCounter = document.querySelector(".cart-counter");
-var cartCounterCheck = document.querySelector(".cart-counter-check"); //取得本地購物車內容
+var buyCheck = document.querySelector(".buy-check");
+var btnCartModal = document.querySelector(".btn-cart-modal"); //取得本地購物車內容
 
 getloaclCart();
 
@@ -120,7 +123,7 @@ function getloaclCart() {
     cartPriceTotal.innerHTML = "\u7E3D\u91D1\u984D\uFF1A".concat(priceTotal, " NTD");
   } else {
     cartData = [];
-    cartModal.innerHTML = "<p class=\"text-info text-center fs-5 py-104 mb-0\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>";
+    cartModal.innerHTML = "\n    <div class = \"py-104 d-flex flex-column justify-content-center\">\n      <p class=\"text-info text-center fs-5 mb-16\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>\n      <a class=\"btn btn-primary text-white w-50 mx-auto\" href=\"./search.html\">\u9EDE\u64CA\uFF01\u524D\u5F80\u8CFC\u8CB7\u9801\u9762</a>\n    </div>\n    ";
   }
 } //價格格式整理
 
@@ -204,9 +207,11 @@ function deletCart(id) {
       creatCartHTML(item);
     });
     cartCounter.innerHTML = "".concat(cartData.length);
+    buyCheck.classList.remove("disabled");
   } else {
     cartCounter.classList.add("d-none");
-    cartModal.innerHTML = "<p class=\"text-info text-center fs-5 py-104 mb-0\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>";
+    cartModal.innerHTML = "\n    <div class = \"py-104 d-flex flex-column justify-content-center\">\n      <p class=\"text-info text-center fs-5 mb-16\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>\n      <a class=\"btn btn-primary text-white w-50 mx-auto\" href=\"./search.html\">\u9EDE\u64CA\uFF01\u524D\u5F80\u8CFC\u8CB7\u9801\u9762</a>\n    </div>\n    ";
+    buyCheck.classList.add("disabled");
   }
 } //課程彈跳視窗
 
@@ -231,15 +236,73 @@ body.addEventListener("click", function (e) {
   }
 
   if (e.target.matches(".btn-danger")) {
-    deletCart(targetNumber);
+    deletCart(targetNumber); //更新buy.html
+
+    if (fileName.toLowerCase().includes("buy")) {
+      buyListCreatHTML(cartData);
+      updataBuyPrice(priceTotal);
+    }
   }
 });
-cartCounterCheck.addEventListener("click", function (e) {
+buyCheck.addEventListener("click", function (e) {
   if (!cartData.length) {
     e.preventDefault();
     return alert("購物車內目前無商品");
   }
 });
+btnCartModal.addEventListener("click", function (e) {
+  if (!cartData.length) {
+    buyCheck.classList.add("disabled");
+  } else {
+    buyCheck.classList.remove("disabled");
+  }
+});
+"use strict";
+
+if (fileName.toLowerCase().includes("buy")) {
+  var buyListCreatHTML = function buyListCreatHTML(data) {
+    var html = "";
+    cartData.forEach(function (item) {
+      html += "\n      <li class=\"rounded-2 shadow p-4 border border-primary\">\n      <div class=\"d-flex gap-16 flex-column flex-lg-row\">\n        <div class=\"coursr-image my-auto\">\n          <img\n            class=\"object-cover img-fuild rounded\"\n            src=\"".concat(item.course.img, "\"\n            alt=\"\"\n            width=\"124\"\n            height=\"124\"\n          />\n        </div>\n        <div>\n          <ul\n            class=\"list-unstyled h-100 d-flex flex-column justify-content-around\"\n          >\n            <li>\u8AB2\u7A0B\uFF1A").concat(item.course.name, "</li>\n            <li>\u8B1B\u5E2B\uFF1A").concat(item.first_name + " " + item.last_name, "</li>\n            <li>\u8AB2\u7A0B\u7E3D\u6642\u6578\uFF1A").concat(item.course.courseHours, "</li>\n            <li>\n              <div class=\"d-flex gap-8\">\n                <p class=\"fs-5 mb-0\">\u50F9\u683C\uFF1A").concat(item.course.discountPrice, "</p>\n                <p\n                  class=\"mb-0 text-decoration-line-through text-info mt-auto\"\n                >\n                ").concat(item.course.price, "\n                </p>\n              </div>\n            </li>\n          </ul>\n        </div>\n        <button class=\"btn btn-danger ms-lg-auto rounded-end\" data-id = \"").concat(item.id, "\">\u522A\u9664</button>\n      </div>\n    </li>\n      ");
+    });
+    buyList.innerHTML = html;
+
+    if (!cartData.length) {
+      buyList.innerHTML = "\n        <div class = \"py-104 d-flex flex-column justify-content-center\">\n            <p class=\"text-info text-center fs-5 mb-16\">\u76EE\u524D\u6C92\u6709\u4EFB\u4F55\u5546\u54C1</p>\n            <a class=\"btn btn-primary text-white w-50 mx-auto\" href=\"./search.html\">\u9EDE\u64CA\uFF01\u524D\u5F80\u8CFC\u8CB7\u9801\u9762</a>\n        </div>\n        ";
+      buyNext.classList.add("disabled");
+    } else {
+      buyNext.classList.remove("disabled");
+    }
+  }; //更新總額
+
+
+  var updataBuyPrice = function updataBuyPrice(price) {
+    buyPriceList.innerHTML = "\n    <li class=\"d-flex justify-content-between\">\n        <p class=\"mb-0\">\u5C0F\u8A08</p>\n        <p class=\"mb-0\">$ ".concat(price, " NTD</p>\n    </li>\n    <li class=\"d-flex justify-content-between\">\n        <p class=\"mb-0\">\u4ECA\u65E5\u7BC0\u7701\u7E3D\u91D1\u984D</p>\n        <p class=\"mb-0\">$ 0 NTD</p>\n    </li>\n    <li li class=\"d-flex justify-content-between\">\n        <p class=\"mb-0\">\u904B\u9001 (\u570B\u969B\u512A\u5148)</p>\n        <p class=\"mb-0\">$ 0 NTD</p>\n    </li>\n    <li class=\"d-flex justify-content-between\">\n        <p class=\"mb-0\">\u7A05\u6B3E</p>\n        <p class=\"mb-0\">$ 0 NTD</p>\n    </li>\n    ");
+    buyPriceTotal.innerHTML = "$ ".concat(price, " NTD");
+  };
+
+  var buyList = document.querySelector(".buy-list");
+  var buyPriceList = document.querySelector(".buy-price");
+  var buyPriceTotal = document.querySelector(".buy-price-total");
+  var buyNext = document.querySelector(".buy-next");
+  buyListCreatHTML(cartData);
+  updataBuyPrice(priceTotal);
+  buyNext.addEventListener("click", function (e) {
+    confirmPurchase = true;
+  });
+}
+"use strict";
+
+if (fileName.toLowerCase().includes("payment")) {
+  var paymentTotal = document.querySelector(".payment-total");
+  var btnPayment = document.querySelector(".btn-payment");
+  paymentTotal.innerHTML = "$ ".concat(priceTotal, " NTD");
+  btnCartModal.dataset.bsTarget = "";
+  btnPayment.addEventListener("click", function (e) {
+    localStorage.clear("cart");
+    cartData = [];
+  });
+}
 "use strict";
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }

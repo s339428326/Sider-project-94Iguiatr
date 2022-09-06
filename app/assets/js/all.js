@@ -70,13 +70,16 @@ const userData = [];
 let filteredData = [];
 //購物車
 let cartData = [];
+//購買確認
+let confirmPurchase = false;
 
 let priceTotal = 0;
 const body = document.querySelector("body");
 const cartModal = document.querySelector(".cart-modal");
 const cartPriceTotal = document.querySelector(".cart-price-total");
 const cartCounter = document.querySelector(".cart-counter");
-const cartCounterCheck = document.querySelector(".cart-counter-check");
+const buyCheck = document.querySelector(".buy-check");
+const btnCartModal = document.querySelector(".btn-cart-modal");
 
 //取得本地購物車內容
 getloaclCart();
@@ -102,7 +105,12 @@ function getloaclCart() {
     cartPriceTotal.innerHTML = `總金額：${priceTotal} NTD`;
   } else {
     cartData = [];
-    cartModal.innerHTML = `<p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>`;
+    cartModal.innerHTML = `
+    <div class = "py-104 d-flex flex-column justify-content-center">
+      <p class="text-info text-center fs-5 mb-16">目前沒有任何商品</p>
+      <a class="btn btn-primary text-white w-50 mx-auto" href="./search.html">點擊！前往購買頁面</a>
+    </div>
+    `;
   }
 }
 
@@ -181,9 +189,16 @@ function deletCart(id) {
       creatCartHTML(item);
     });
     cartCounter.innerHTML = `${cartData.length}`;
+    buyCheck.classList.remove("disabled");
   } else {
     cartCounter.classList.add("d-none");
-    cartModal.innerHTML = `<p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>`;
+    cartModal.innerHTML = `
+    <div class = "py-104 d-flex flex-column justify-content-center">
+      <p class="text-info text-center fs-5 mb-16">目前沒有任何商品</p>
+      <a class="btn btn-primary text-white w-50 mx-auto" href="./search.html">點擊！前往購買頁面</a>
+    </div>
+    `;
+    buyCheck.classList.add("disabled");
   }
 }
 
@@ -352,12 +367,25 @@ body.addEventListener("click", (e) => {
   }
   if (e.target.matches(".btn-danger")) {
     deletCart(targetNumber);
+    //更新buy.html
+    if (fileName.toLowerCase().includes("buy")) {
+      buyListCreatHTML(cartData);
+      updataBuyPrice(priceTotal);
+    }
   }
 });
 
-cartCounterCheck.addEventListener("click", (e) => {
+buyCheck.addEventListener("click", (e) => {
   if (!cartData.length) {
     e.preventDefault();
     return alert("購物車內目前無商品");
+  }
+});
+
+btnCartModal.addEventListener("click", (e) => {
+  if (!cartData.length) {
+    buyCheck.classList.add("disabled");
+  } else {
+    buyCheck.classList.remove("disabled");
   }
 });

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>94 | Guitar</title>
+    <!-- Boostrap5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <!-- google fonts Anto-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
+    />
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- all.scss -->
+    <link rel="stylesheet" href="./assets/style/all.css" />
+  </head>
+
+  <body>
+    <header class="sticky-top">
+      <nav class="bg-black border-bottom">
+        <div class="container d-flex justify-content-between px-0 px-md-12">
+          <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
+            >Logo</a
+          >
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start">
+            <li class=" position-relative my-auto">
+              <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <span class="material-icons text-white"> shopping_cart 
+                </span>
+                <span class="cart-counter d-none">0</span>
+              </a>
+            </li>
+            <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
+              <a class="fs-5 fw-bold text-white" href="./login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    
+<main>
+  <section class="banner">
+    <div class="container position-relative">
+      <div class="row title align-items-center">
+        <div class="col-md-4">
+          <article class="mt-40 mt-md-0">
+            <h1 class="mb-28 font-monospace">
+              <span class="bg-primary rounded-2 text-center text-black"
+                >94</span
+              >
+              | Guitar
+            </h1>
+            <div class="search bg-light border border-2 border-primary mb-24">
+              <form
+                class="d-flex align-items-center justify-content-between"
+                action=""
+              >
+                <a href="./search.html">
+                  <input
+                    class="border-0 w-75 px-16 fake-search"
+                    type="text"
+                    placeholder="立即嘗試"
+                /></a>
+                <select
+                  id="course"
+                  class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                  aria-label="Default select example"
+                >
+                  <option selected="">全部</option>
+                  <option value="1">創作者</option>
+                  <option value="2">特殊調弦</option>
+                  <option value="3">找課程</option>
+                  <option value="3">專輯</option>
+                  <option value="3">吉他譜</option>
+                  <option value="3">文章</option>
+                </select>
+                <a
+                  type="submit"
+                  class="border-0 rounded-0"
+                  href="./search.html"
+                >
+                  <span
+                    class="bg-primary p-8 text-white material-icons-outlined d-block"
+                  >
+                    search
+                  </span>
+                </a>
+              </form>
+            </div>
+            <div class="hot-items d-flex">
+              <p class="me-8 text-nowrap">熱門項目:</p>
+              <ul class="list-unstyled d-flex gap-8 flex-wrap">
+                <li>
+                  <a
+                    class="text-black bg-primary py-4 px-8 rounded-3"
+                    href="./search.html"
+                    >Rylynn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-black bg-primary py-4 px-8 rounded-3"
+                    href="./search.html"
+                    >Drifting</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-black bg-primary py-4 px-8 rounded-3"
+                    href="./search.html"
+                    >Seventh</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-black bg-primary py-4 px-8 rounded-3"
+                    href="./search.html"
+                    >Gravity</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bacground-borad">
+    <div class="container py-48 py-md-80">
+      <h2 class="mb-48"><span class="bt-line">創新</span>平台體驗</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card border-0 text-white rounded-0">
+            <img
+              src="./assets/images/kelly-sikkema-ml1IgjV8OvY-unsplash.png"
+              class="card-img rounded-0 img-postion"
+              alt="guitar-player-1"
+            />
+            <div
+              class="d-flex flex-column justify-content-end px-48 card-img-overlay"
+            >
+              <h5 class="card-title fs-3 mb-32">客製化頁面</h5>
+              <p class="card-text mb-16" data-aos="fade-up">
+                客製化個人頁面，讓您不用再為建立個人品牌網頁所困擾
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 text-white rounded-0">
+            <img
+              src="./assets/images/social-media.jpeg"
+              class="card-img rounded-0"
+              alt="guitar-player-1"
+            />
+            <div
+              class="d-flex flex-column justify-content-end px-48 card-img-overlay"
+            >
+              <h5 class="card-title fs-3 mb-32">統一渠道</h5>
+              <p class="card-text mb-xxl-16" data-aos="fade-up">
+                不用再將教學文章與個人動態放在不同平台，當您更新網頁內容，會提醒您的追蹤者
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 text-white rounded-0">
+            <img
+              src="./assets/images/guitar-player-1.jpeg"
+              class="card-img rounded-0"
+              alt="guitar-player-1"
+            />
+            <div
+              class="d-flex flex-column justify-content-end px-48 card-img-overlay"
+            >
+              <h5 class="card-title fs-3 mb-32">增加曝光</h5>
+              <p class="card-text mb-16" data-aos="fade-up">
+                不用擔心因為教學平台分類過多，導致教學課程能見度降低
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-48" data-aos="fade-up">
+        <div class="col-md-10 d-flex align-items-center">
+          <div class="col-md-2">
+            <img
+              class="guitar-player-image"
+              src="./assets/images/guitar-player-2.png"
+              alt="guitar"
+            />
+          </div>
+          <div class="col-md-10 p-24">
+            <h5 class="card-title mb-24 fs-3">Wen</h5>
+            <p class="card-text mb-24 col-10">
+              在平台還未成立前都要請人另外架設網站，現在只要透過幾個簡單步驟就可快速上架課程及個人創作吉他譜。
+            </p>
+            <p class="card-text">
+              <small class="text-muted">3年個人教育品牌</small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row" data-aos="fade-up">
+        <div
+          class="col-md-10 d-flex flex-row-reverse align-items-center offset-md-2"
+        >
+          <div class="col-md-2">
+            <img
+              class="guitar-player-image"
+              src="./assets/images//guitar-player-500x500.png"
+              alt="guitar"
+            />
+          </div>
+          <div class="col-md-10 p-16">
+            <h5 class="card-title mb-24 fs-3 text-end">Paupau</h5>
+            <p class="col-md-10 offset-md-2">
+              我的文章分享及教學總是散落各個平台及個人網誌，這裡可以統整並上傳課程使得我在教學上更省心。
+            </p>
+            <p class="text-end">
+              <small class="text-muted">10影音教學經驗</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-80">
+    <div class="container">
+      <div class="row py-48 py-md-80 justify-content-center">
+        <div>
+          <div
+            class="d-flex flex-row-reverse flex-wrap align-items-center position-relative"
+          >
+            <img
+              class="person-move-1 col-12 col-md-6 d-none d-md-block"
+              src="./assets/images/player-guitar.png"
+              alt="person-1"
+            />
+            <article class="col-md-12">
+              <p class="fs-2" data-aos="fade-up">想學習 Finger Style</p>
+              <p class="fs-2 offset-md-1" data-aos="fade-up">
+                卻不知道哪裡<span class="bt-line">找課程</span>嗎?
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container mt-24">
+    <h2 class="text-center">熱門搜尋項目</h2>
+    <div class="swiper swiper-container py-40">
+      <div class="swiper-wrapper text-white">
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          森林馬戲團
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Drifting
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Sungha Xung
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          葉X峻彈吉他
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Andy MxKee
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Grxvity
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Wen吉他X
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Sevenxh
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          Rylynn
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          slide
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          slide
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          slide
+        </div>
+        <div
+          class="swiper-slide border text-center py-24 rounded-3 btn btn-outline-light"
+        >
+          slide
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row mt-48" data-aos="fade-up">
+        <div class="col-md-10 d-flex align-items-center">
+          <div class="col-md-2">
+            <img
+              class="guitar-player-image"
+              src="./assets/images/guitar-player-3-500x500.png"
+              alt="guitar"
+            />
+          </div>
+          <div class="col-md-10 p-24">
+            <h5 class="card-title mb-24 fs-3">Ｍrs. Huang</h5>
+            <p class="card-text mb-24 col-10">
+              以前總是在YouTube 及各大吉他譜網站搜尋FingerStyle
+              Tab現在有94I指彈平台一次提供課程與吉他譜
+            </p>
+            <p class="card-text">
+              <small class="text-muted">premium會員</small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row" data-aos="fade-up">
+        <div
+          class="col-md-10 d-flex flex-row-reverse align-items-center offset-md-2"
+        >
+          <div class="col-md-2">
+            <img
+              class="guitar-player-image"
+              src="./assets/images/elearning-young-cute-beautiful-girl-remotely-giving-guitar-classes-home-with-notes500x500.png"
+              alt="guitar"
+            />
+          </div>
+          <div class="col-md-10 p-24">
+            <h5 class="card-title mb-24 fs-3 text-end">Mrs.wong</h5>
+            <p class="col-10 offset-md-2">
+              平台上創作者是我仰慕以久的演奏家，終於不用為了練習曲目另外找非主要管道的資源了
+            </p>
+            <p class="text-end">
+              <small class="text-muted">premium會員</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-48 mb-80">
+    <div class="container position-relative">
+      <img
+        class="sider-guitar"
+        src="./assets/images/side-guitar-1.png"
+        alt=""
+      />
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="mb-32">Fingerstyle 彈奏風格</h2>
+          <p>
+            一般來說此種風格大多意旨鋼弦木吉他演奏，並且在表演方面彈奏若大量使用
+            擊弦、點弦、泛音甚至敲擊．．．等技巧，並且在演奏時會利用以上技巧營造主弦律、和聲伴奏、BASS、打擊樂器，您可以想像成將beatbox與唱歌之間的差別，前者與後者是人聲表演但表演時著重的技巧卻截然不同，希望對於這樣受人廣泛定義的Finger
+            Style詞彙經由這樣的舉例您能更明白這樣的吉他表演風格
+          </p>
+        </div>
+      </div>
+      <div class="row mt-80 mb-32">
+        <p class="fs-3 mb-32">著名Finger Style演奏家</p>
+        <div class="col-md-4">
+          <div class="d-flex gap-16">
+            <img
+              class="guitarist"
+              src="./assets/images/Andy-mckee.png"
+              alt="Andy-mckee"
+            />
+            <p>
+              Andy mckee
+              擅用複雜的和弦概念、左右手技巧、敲擊技巧..等，例如個人作品:Drifting、Rylynn為Fingerstyle最經典曲目之一。
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex gap-16">
+            <img
+              class="guitarist"
+              src="./assets/images/Kotaro-Oshio.png"
+              alt="Andy-mckee"
+            />
+            <p>
+              押尾光太郎 日本最知名的指彈吉他大師，曲目大量使用了Nail
+              Attack​的手法，招牌歌曲Wings you are the HERO。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex gap-16">
+            <img
+              class="guitarist"
+              src="./assets/images/Luca-Stricagnoli.png"
+              alt="Luca-Stricagnoli"
+            />
+            <p>
+              Luca-Stricagnoli
+              不僅受過古典訓練，著名曲目Thunderstruck左右手編排非常精彩，令人印象深刻。
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex gap-16">
+            <img
+              class="guitarist"
+              src="./assets/images/Daniel-Padim.png"
+              alt="Daniel-Padim"
+            />
+            <p>
+              Daniel Padim
+              吉他編曲中大量使用精準的泛音與敲擊手法，在炫技與音樂性之間找到了一個近乎完美的平衡
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer border-top bg-black">
+      <div class="container py-104">
+        <div class="row flex-column align-items-center">
+          <div class="d-flex justify-content-center align-items-center mb-16">
+            <span class="bg-primary rounded-1 p-4 fs-4 me-8 font-monospace">Logo</span>
+            <a class="text-white fs-5 mb-0 font-monospace" href="./">94 | Guitar</a>
+          </div>
+
+          <div class="col-md-2 mb-32">
+            <ul class="list-unstyled d-flex gap-24 justify-content-center ms-0">
+              <li>
+                <a href="#"
+                  ><img
+                    class="social-media"
+                    src="./assets/images/facebook.png"
+                    alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    class="social-media"
+                    src="./assets/images/instagram.png"
+                    alt="instagram"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="social-media"
+                    src="./assets/images/youtube.png"
+                    alt="youtube"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-2">
+            <div class="border-bottom text-center mb-8">
+              <h5 class="fs-5 fw-bold">關於</h5>
+            </div>
+
+            <ul class="list-unstyled ms-0 px-18 mb-0">
+              <li><a href="">關於 94 | 指彈</a></li>
+              <li><a href="">最新消息</a></li>
+              <li><a href="">會員服務條款</a></li>
+              <li><a href="">隱私權保護政策</a></li>
+              <li><a href="">著作權保護措施</a></li>
+              <li><a href="">重置與散播權保護措施</a></li>
+              <li><a href="">免責聲明免</a></li>
+              <li ><a href="">相關產品服務</a></liㄇ>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <div class="mb-48 mb-md-0">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">商務</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">合作媒體</a></li>
+                <li><a href="">學生與校園合作</a></li>
+              </ul>
+            </div>
+            <div class="d-md-none">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">其他</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">人才招募</a></li>
+                <li><a href="">創作者指南</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-md-2 d-none d-md-block">
+            <div class="border-bottom text-center mb-8">
+              <h5 class="fs-5 fw-bold">其他</h5>
+            </div>
+
+            <ul class="list-unstyled ms-0 px-18 mb-0">
+              <li><a href="">人才招募</a></li>
+              <li><a href="">創作者指南</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary py-4">
+        <p class="text-center text-white mb-0">
+          此網站為課程練習 請勿用於商業行為
+        </p>
+      </div>
+    </footer>
+    <section class="bs5-modal">
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content text-black ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">購物車</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body cart-modal d-flex flex-column gap-32">
+              <p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>
+              <!-- <div class="d-flex  justify-content-around p-16 border border-primary shadow-lg rounded-2 mb-32">
+                <img class="object-cover"
+                src="https://img-c.udemycdn.com/course/480x270/1057050_8ba2.jpg" 
+                alt=""
+                width="125"
+                height="125">
+                <div>
+                  <p>課程名稱：item1</p>
+                  <div class="d-flex gap-8 ">
+                    <p>價格</p>
+                    <p>$330</p>
+                    <p class="text-info text-decoration-line-through ">$2290</p>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-danger">刪除</button>
+                  </div>
+
+                </div>
+
+                
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <div class="d-flex">
+                <p class="cart-price-total">總金額：0 NTD</p>
+              </div>
+              <a class="btn btn-primary text-white buy-check" href="./buy.html">馬上付款</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+</html>

@@ -62,21 +62,6 @@ var swiper = new Swiper(".swiper-course", {
       spaceBetween: 16
     }
   }
-});
-var mySwiper = new Swiper(".mySwiper", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  slidesPerGroup: 4,
-  loopFillGroupWithBlank: true,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
 }); /////////////////////////////////////////////
 //url checker
 
@@ -290,6 +275,49 @@ if (fileName.toLowerCase().includes("buy")) {
   buyNext.addEventListener("click", function (e) {
     confirmPurchase = true;
   });
+}
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+if (fileName.toLowerCase().includes("member")) {
+  var drawChart = function drawChart() {
+    var _options;
+
+    var data = google.visualization.arrayToDataTable([["年齡族群", "數量"], ["0~15歲", 20], ["16~23歲", 120], ["24~35歲", 90], ["36~45歲", 25], ["46~55歲", 10], ["55~65歲", 5], ["65以上", 3]]);
+    var options = (_options = {
+      title: "追蹤族群",
+      pieHole: 0.4,
+      width: 400,
+      height: 500,
+      backgroundColor: "transparent",
+      titleTextStyle: {
+        color: "white",
+        fontSize: 16
+      }
+    }, _defineProperty(_options, "titleTextStyle", {
+      color: "white",
+      fontSize: 36,
+      bold: true
+    }), _defineProperty(_options, "chartArea", {
+      left: 20,
+      // top: -10,
+      width: "100%",
+      height: "75%"
+    }), _defineProperty(_options, "legend", {
+      textStyle: {
+        color: "white",
+        fontSize: 16
+      }
+    }), _options);
+    var chart = new google.visualization.PieChart(document.getElementById("donutchart"));
+    chart.draw(data, options);
+  };
+
+  google.charts.load("current", {
+    packages: ["corechart"]
+  });
+  google.charts.setOnLoadCallback(drawChart);
 }
 "use strict";
 

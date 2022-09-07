@@ -14457,4 +14457,10 @@ fieldset:disabled .btn {
   width: auto;
 }
 
+.play-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
 /*# sourceMappingURL=all.css.map */

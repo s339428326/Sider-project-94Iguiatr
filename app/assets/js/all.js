@@ -43,21 +43,6 @@ var swiper = new Swiper(".swiper-course", {
   },
 });
 
-var mySwiper = new Swiper(".mySwiper", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  slidesPerGroup: 4,
-  loopFillGroupWithBlank: true,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
 /////////////////////////////////////////////
 
 //url checker
@@ -80,6 +65,11 @@ const cartPriceTotal = document.querySelector(".cart-price-total");
 const cartCounter = document.querySelector(".cart-counter");
 const buyCheck = document.querySelector(".buy-check");
 const btnCartModal = document.querySelector(".btn-cart-modal");
+
+//登入
+const navLogin = document.querySelector(".nav-login");
+const dropdownAccount = document.querySelector(".dropdown-account");
+const btnLoginOut = document.querySelector(".btn-login-out");
 
 //取得本地購物車內容
 getloaclCart();
@@ -232,7 +222,7 @@ function courseModal(id) {
       <div class="list-unstyled">
         <div>
           <p class="text-center text-md-start">
-            講師：<a href="#"
+            講師：<a href="./imagePage.html"
               >${item.last_name + " " + item.first_name}</a
             >
           </p>
@@ -369,8 +359,8 @@ body.addEventListener("click", (e) => {
     deletCart(targetNumber);
     //更新buy.html
     if (fileName.toLowerCase().includes("buy")) {
-      buyListCreatHTML(cartData);
       updataBuyPrice(priceTotal);
+      buyListCreatHTML(cartData);
     }
   }
 });
@@ -389,3 +379,17 @@ btnCartModal.addEventListener("click", (e) => {
     buyCheck.classList.remove("disabled");
   }
 });
+
+btnLoginOut.addEventListener("click", (e) => {
+  localStorage.setItem("login", false);
+});
+
+if (localStorage.getItem("login") === "true") {
+  dropdownAccount.classList.remove("d-none");
+  navLogin.classList.add("d-none");
+}
+
+if (localStorage.getItem("login") === "false") {
+  dropdownAccount.classList.add("d-none");
+  navLogin.classList.remove("d-none");
+}

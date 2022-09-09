@@ -1,0 +1,639 @@
+---
+title: 94 | Guitar
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+
+<main>
+  <img
+    class="bg-banner object-cover img-fuild position-absolute image-page-h w-100"
+    src="./assets/images/ballun.jpeg"
+    alt=""
+  />
+  <section class="container">
+    <div class="row">
+      <div class="col w-100 image-page-h">
+        <div
+          class="d-flex flex-column flex-md-row p-0 p-md-24 h-100 justify-content-center justify-content-md-between align-items-center position-relative"
+        >
+          <div class="mt-0 mt-md-auto d-flex gap-16">
+            <img
+              class="my-auto object-cover rounded-circle"
+              src="./assets/images/guitar-player-2.png"
+              alt=""
+              width="75"
+              height="75"
+            />
+            <ul class="list-unstyled">
+              <li class="d-flex gap-8 align-items-center mb-4">
+                魯凱
+                <div class="bg-primary px-4 fw-bold rounded">精選教師</div>
+                <button class="btn btn-primary text-white fw-bold">
+                  + 追蹤中
+                </button>
+                <button
+                  class="border-0 bg-transparent"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="material-icons text-white"> more_vert </span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">加入黑名單</a></li>
+                  <li><a class="dropdown-item" href="#">默默關注</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">個人舉報</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="fs-small mb-4">吃貨 ｜ 不正經 ｜ 熱愛教學</li>
+              <li class="w-75 text-info">
+                我是一名熱愛指彈與教學分享的創作者,
+                課程也多次蟬連旁行榜歡迎成為我的學生
+              </li>
+            </ul>
+          </div>
+          <div
+            class="mt-0 mt-md-auto d-flex flex-wrap justify-content-center gap-24 col-md-4"
+          >
+            <div>
+              <p class="border-bottom mb-0">文章數量</p>
+              <p class="text-center">15</p>
+            </div>
+            <div>
+              <p class="border-bottom mb-0">課程數量</p>
+              <p class="text-center">10</p>
+            </div>
+            <div>
+              <p class="border-bottom mb-0">學生總數</p>
+              <p class="text-center">31,253</p>
+            </div>
+            <div>
+              <p class="border-bottom mb-0">總評分</p>
+              <p class="text-center">4.6</p>
+            </div>
+            <div>
+              <p class="border-bottom mb-0">追蹤數量</p>
+              <p class="text-center">12,123</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container my-32">
+    <div class="row">
+      <div class="col-md-8 mb-24 mb-md-0">
+        <div class="bg-dark rounded-3 p-24">
+          <h1 class="fs-3 mb-32 border border-3 border-transparent">
+            <span class="border-bottom border-3 border-primary"> 個人</span>介紹
+          </h1>
+          <p class="mb-40">
+            Hi,
+            我是魯凱老師在目前已發布超過40堂熱門課程,總學生人數已超過5000人,同時線下也有多年的教學經驗，線上課程內容不再只有手把手教怎麼彈,更會帶領您透過系統性的學習知道樂理知識,讓您不再漫無目的的彈琴。
+          </p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="d-flex gap-8 justify-content-center">
+                <span class="material-icons text-primary">
+                  cast_for_education
+                </span>
+                <h5>教學項目</h5>
+              </div>
+
+              <ul class="list-unstyled d-flex flex-column align-items-center">
+                <li>FingerStyle 演奏</li>
+                <li>古典吉他</li>
+                <li>吉他彈唱</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="d-flex gap-8 justify-content-center">
+                <span class="material-icons text-primary"> music_note </span>
+                <h5>參賽經驗</h5>
+              </div>
+
+              <ul class="list-unstyled d-flex flex-column align-items-center">
+                <li>大Ｘ杯鋼弦演奏組 第一名</li>
+                <li>大Ｘ杯鋼弦創作組 第一名</li>
+                <li>金Ｘ獎鋼弦創作組 第三名</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="d-flex justify-content-center gap-8">
+                <span class="material-icons text-primary"> description </span>
+                <h5>教學經歷</h5>
+              </div>
+
+              <ul class="list-unstyled d-flex flex-column align-items-center">
+                <li>XX大學吉他社</li>
+                <li>XX大學吉他社</li>
+                <li>XX大學吉他社</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-dark rounded-3 p-24 mb-8">
+          <p class="fs-4 fw-bold">個人社群帳號</p>
+          <ul class="d-flex list-unstyled justify-content-around">
+            <li>
+              <a href="#"
+                ><img
+                  src="./assets/images/instagram.png"
+                  alt=""
+                  width="75"
+                  height="75"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="./assets/images/facebook.png"
+                  alt=""
+                  width="75"
+                  height="75"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="./assets/images/youtube.png"
+                  alt=""
+                  width="75"
+                  height="75"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-dark d-flex flex-column align-items-center rounded-3 py-24 gap-16"
+        >
+          <button class="btn btn-primary w-75 fw-bold fs-5 text-white">
+            詢問私教
+          </button>
+          <button class="btn btn-outline-primary w-75 fw-bold fs-5">
+            價格詢問
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container mb-32">
+    <div class="row">
+      <div class="col">
+        <div class="person-course bg-dark rounded-3 p-24">
+          <p class="fs-3 fw-bold">發布課程</p>
+          <div class="person-course-list row gap-16 gap-md-0">
+            <div class="col-md-4">
+              <div class="course-card bg-light text-black rounded-2 me-md-16">
+                <div class="course-head">
+                  <img
+                    class="object-cover rounded-top justify-content-center w-100"
+                    src="./assets/images/guitar-board.png"
+                    alt="player-guitar"
+                    height="194"
+                  />
+                  <div class="d-flex justify-content-center my-8">
+                    <p class="course-name mb-0 fw-bold">
+                      地獄練習一週掌握吉他音階用法
+                    </p>
+                  </div>
+                </div>
+                <div class="course-footer rounded-bottom">
+                  <div
+                    class="d-flex justify-content-center border-top border-bottom py-8"
+                  >
+                    <p class="course-price pe-8 mb-0 text-danger fw-bold">
+                      超值價格：$ 399
+                    </p>
+                    <p
+                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
+                    >
+                      $ 2,990
+                    </p>
+                  </div>
+                  <div class="d-flex bg-primary rounded-bottom">
+                    <div
+                      class="btn py-8 border-end rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      加入購物車
+                    </div>
+                    <div
+                      class="btn py-8 rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      More
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card bg-light text-black rounded-2 me-md-16">
+                <div class="course-head">
+                  <img
+                    class="object-cover rounded-top justify-content-center w-100"
+                    src="./assets/images/guitar-board.png"
+                    alt="player-guitar"
+                    height="194"
+                  />
+                  <div class="d-flex justify-content-center my-8">
+                    <p class="course-name mb-0 fw-bold">
+                      地獄練習一週掌握吉他音階用法
+                    </p>
+                  </div>
+                </div>
+                <div class="course-footer rounded-bottom">
+                  <div
+                    class="d-flex justify-content-center border-top border-bottom py-8"
+                  >
+                    <p class="course-price pe-8 mb-0 text-danger fw-bold">
+                      超值價格：$ 399
+                    </p>
+                    <p
+                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
+                    >
+                      $ 2,990
+                    </p>
+                  </div>
+                  <div class="d-flex bg-primary rounded-bottom">
+                    <div
+                      class="btn py-8 border-end rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      加入購物車
+                    </div>
+                    <div
+                      class="btn py-8 rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      More
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card bg-light text-black rounded-2 me-md-16">
+                <div class="course-head">
+                  <img
+                    class="object-cover rounded-top justify-content-center w-100"
+                    src="./assets/images/guitar-board.png"
+                    alt="player-guitar"
+                    height="194"
+                  />
+                  <div class="d-flex justify-content-center my-8">
+                    <p class="course-name mb-0 fw-bold">
+                      地獄練習一週掌握吉他音階用法
+                    </p>
+                  </div>
+                </div>
+                <div class="course-footer rounded-bottom">
+                  <div
+                    class="d-flex justify-content-center border-top border-bottom py-8"
+                  >
+                    <p class="course-price pe-8 mb-0 text-danger fw-bold">
+                      超值價格：$ 399
+                    </p>
+                    <p
+                      class="course-discountPrice text-decoration-line-through mb-0 text-info"
+                    >
+                      $ 2,990
+                    </p>
+                  </div>
+                  <div class="d-flex bg-primary rounded-bottom">
+                    <div
+                      class="btn py-8 border-end rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      加入購物車
+                    </div>
+                    <div
+                      class="btn py-8 rounded-0 w-50"
+                      data-bs-toggle="modal"
+                      data-bs-target="#notLstedModal"
+                    >
+                      More
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container mb-32">
+    <div class="row">
+      <div class="col-md-6 mb-24 mb-md-0">
+        <p class="fs-3 fw-bold">發布文章</p>
+        <div class="row d-flex flex-column gap-40">
+          <div class="article d-flex text-white gap-16">
+            <div>
+              <img
+                class="object-cover"
+                src="./assets/images/guitar-player-2.png"
+                alt=""
+                width="150"
+                height="150"
+              />
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <p class="articles-title fs-5 mb-4">
+                  <a class="text-white" href="#">掌握吉他音階用法</a>
+                </p>
+                <div class="d-flex">
+                  <p>作者：</p>
+                  <p>
+                    <a
+                      class="articles-author text-white text-decoration-underline"
+                      href="./imagePage.html"
+                      >魯凱</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <p class="articles-title articles-content">
+                Minor Pentatonic Scale, Major Pentatonic Scale, Mix Pentatonic
+                Scale, Major Scale...等
+              </p>
+              <div class="d-flex justify-content-between">
+                <time>2022/10/17</time>
+                <div class="d-flex text-info">
+                  <p>觀看次數：</p>
+                  <p class="articles-viewer">500</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="article d-flex text-white gap-16">
+            <div>
+              <img
+                class="object-cover"
+                src="./assets/images/guitar-player-2.png"
+                alt=""
+                width="150"
+                height="150"
+              />
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <p class="articles-title fs-5 mb-4">
+                  <a class="text-white" href="#">掌握吉他音階用法</a>
+                </p>
+                <div class="d-flex">
+                  <p>作者：</p>
+                  <p>
+                    <a
+                      class="articles-author text-white text-decoration-underline"
+                      href="./imagePage.html"
+                      >魯凱</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <p class="articles-title articles-content">
+                Minor Pentatonic Scale, Major Pentatonic Scale, Mix Pentatonic
+                Scale, Major Scale...等
+              </p>
+              <div class="d-flex justify-content-between">
+                <time>2022/10/17</time>
+                <div class="d-flex text-info">
+                  <p>觀看次數：</p>
+                  <p class="articles-viewer">500</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="article d-flex text-white gap-16">
+            <div>
+              <img
+                class="object-cover"
+                src="./assets/images/guitar-player-2.png"
+                alt=""
+                width="150"
+                height="150"
+              />
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <p class="articles-title fs-5 mb-4">
+                  <a class="text-white" href="#">掌握吉他音階用法</a>
+                </p>
+                <div class="d-flex">
+                  <p>作者：</p>
+                  <p>
+                    <a
+                      class="articles-author text-white text-decoration-underline"
+                      href="./imagePage.html"
+                      >魯凱</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <p class="articles-title articles-content">
+                Minor Pentatonic Scale, Major Pentatonic Scale, Mix Pentatonic
+                Scale, Major Scale...等
+              </p>
+              <div class="d-flex justify-content-between">
+                <time>2022/10/17</time>
+                <div class="d-flex text-info">
+                  <p>觀看次數：</p>
+                  <p class="articles-viewer">500</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="fs-3 fw-bold">發布專輯</p>
+        <div class="row mb-24">
+          <div class="col-md-6 mb-24 mb-md-0">
+            <div class="bg-light text-black rounded">
+              <div
+                class="text-black bg-white d-flex flex-column justify-content-between rounded"
+              >
+                <div class="ablum-top position-relative">
+                  <img
+                    class="img-fuild w-100 object-cover rounded-top"
+                    src="./assets/images/dog.png"
+                    alt="ablum-deer"
+                    height="175"
+                  />
+                  <button
+                    class="btn-info rounded-circle border-0 play-button"
+                    style="width: 50px; height: 50px"
+                  >
+                    <span class="material-icons align-middle">
+                      play_arrow
+                    </span>
+                  </button>
+                </div>
+                <div class="ablum-middle py-8 px-16">
+                  <div class="d-flex justify-content-between">
+                    <p class="fs-5 fw-bold">
+                      Lost in the <br />
+                      World
+                    </p>
+                    <button class="btn border-0">
+                      <span class="material-icons text-black"> more_vert </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light text-black rounded">
+              <div
+                class="text-black bg-white d-flex flex-column justify-content-between rounded"
+              >
+                <div class="ablum-top position-relative">
+                  <img
+                    class="img-fuild w-100 object-cover rounded-top"
+                    src="./assets/images/dog.png"
+                    alt="ablum-deer"
+                    height="175"
+                  />
+                  <button
+                    class="btn-info rounded-circle border-0 play-button"
+                    style="width: 50px; height: 50px"
+                  >
+                    <span class="material-icons align-middle">
+                      play_arrow
+                    </span>
+                  </button>
+                </div>
+                <div class="ablum-middle py-8 px-16">
+                  <div class="d-flex justify-content-between">
+                    <p class="fs-5 fw-bold">
+                      Lost in the <br />
+                      World
+                    </p>
+                    <button class="btn border-0">
+                      <span class="material-icons text-black"> more_vert </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-24 mb-md-0">
+            <div class="bg-light text-black rounded">
+              <div
+                class="text-black bg-white d-flex flex-column justify-content-between rounded"
+              >
+                <div class="ablum-top position-relative">
+                  <img
+                    class="img-fuild w-100 object-cover rounded-top"
+                    src="./assets/images/dog.png"
+                    alt="ablum-deer"
+                    height="175"
+                  />
+                  <button
+                    class="btn-info rounded-circle border-0 play-button"
+                    style="width: 50px; height: 50px"
+                  >
+                    <span class="material-icons align-middle">
+                      play_arrow
+                    </span>
+                  </button>
+                </div>
+                <div class="ablum-middle py-8 px-16">
+                  <div class="d-flex justify-content-between">
+                    <p class="fs-5 fw-bold">
+                      Lost in the <br />
+                      World
+                    </p>
+                    <button class="btn border-0">
+                      <span class="material-icons text-black"> more_vert </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light text-black rounded">
+              <div
+                class="text-black bg-white d-flex flex-column justify-content-between rounded"
+              >
+                <div class="ablum-top position-relative">
+                  <img
+                    class="img-fuild w-100 object-cover rounded-top"
+                    src="./assets/images/dog.png"
+                    alt="ablum-deer"
+                    height="175"
+                  />
+                  <button
+                    class="btn-info rounded-circle border-0 play-button"
+                    style="width: 50px; height: 50px"
+                  >
+                    <span class="material-icons align-middle">
+                      play_arrow
+                    </span>
+                  </button>
+                </div>
+                <div class="ablum-middle py-8 px-16">
+                  <div class="d-flex justify-content-between">
+                    <p class="fs-5 fw-bold">
+                      Lost in the <br />
+                      World
+                    </p>
+                    <button class="btn border-0">
+                      <span class="material-icons text-black"> more_vert </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<section class="bs5-modal">
+  <div
+    class="modal fade"
+    id="notLstedModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-black">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">系統訊息</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center fs-5">此課程並未上架</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

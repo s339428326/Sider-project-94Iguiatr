@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/images/guitar.png" type="image/x-icon">
     <title><%- title %></title>
     <!-- Boostrap5 -->
     <link
@@ -29,13 +30,13 @@
   </head>
 
   <body>
-    <header class="sticky-top">
+    <header class="sticky-top shadow position-relative">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
           <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
-          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start">
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start ">
             <li class=" position-relative my-auto">
               <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <span class="material-icons text-white"> shopping_cart 
@@ -44,7 +45,21 @@
               </a>
             </li>
             <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
-              <a class="fs-5 fw-bold text-white" href="./login.html">Login</a>
+              <a class="fs-5 fw-bold text-white nav-login" href="./login.html">Login</a>
+           
+                <div class="dropdown dropdown-account d-none">
+                  <div class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-icons align-middle">account_circle</span>
+                  </div>
+                  <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownMenuButton1">
+                    <li><a href="#">User.name</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                    <li><a class="dropdown-item" href="#">通知</a></li>
+                    <li><a class="dropdown-item" href="./member.html">會員頁面</a></li>
+                    <li><a class="dropdown-item" href="#">追蹤&收藏</a></li>
+                    <li><a class="dropdown-item btn-login-out" href="./index.html">登出</a></li>
+                  </ul>
+                </div>
             </li>
           </ul>
         </div>
@@ -195,6 +210,7 @@
     <script src="./assets/js/vendors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/all.js"></script>
   </body>

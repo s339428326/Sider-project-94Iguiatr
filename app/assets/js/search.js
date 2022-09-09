@@ -39,20 +39,20 @@ if (fileName.toLowerCase().includes("search")) {
                   src="${item.course.img}"
                   alt="player-guitar"
                 />
-                <div class="d-flex justify-content-center mt-8">
-                  <p class="course-name">${item.course.name}</p>
+                <div class="d-flex justify-content-center my-8">
+                  <p class="course-name mb-0 fw-bold">${item.course.name}</p>
                 </div>
               </div>
-              <div class="course-footer bg-primary rounded-bottom">
-                <div class="d-flex justify-content-center border-bottom py-8">
-                  <p class="course-price pe-8 mb-0">超值價格：${item.course.discountPrice}</p>
+              <div class="course-footer rounded-bottom">
+                <div class="d-flex justify-content-center border-top border-bottom py-8">
+                  <p class="course-price pe-8 mb-0 text-danger fw-bold">超值價格：${item.course.discountPrice}</p>
                   <p
                     class="course-discountPrice text-decoration-line-through mb-0 text-info"
                   >
                     ${item.course.price}
                   </p>
                 </div>
-                <div class="d-flex btn-course bg-secondary rounded-bottom">
+                <div class="d-flex btn-course bg-primary rounded-bottom">
                   <div class="btn btn-cart py-8 border-end rounded-0 w-50" data-id="${item.id}">
                     加入購物車
                   </div>

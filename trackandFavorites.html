@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/images/guitar.png" type="image/x-icon">
+    <title>94 | Guitar</title>
+    <!-- Boostrap5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <!-- google fonts Anto-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
+    />
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- all.scss -->
+    <link rel="stylesheet" href="./assets/style/all.css" />
+  </head>
+
+  <body>
+    <header class="sticky-top shadow position-relative">
+      <nav class="bg-black border-bottom">
+        <div class="container d-flex justify-content-between px-0 px-md-12">
+          <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
+            >Logo</a
+          >
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start ">
+            <li class=" position-relative my-auto">
+              <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <span class="material-icons text-white"> shopping_cart 
+                </span>
+                <span class="cart-counter d-none">0</span>
+              </a>
+            </li>
+            <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
+              <a class="fs-5 fw-bold text-white nav-login" href="./login.html">Login</a>
+           
+                <div class="dropdown dropdown-account d-none">
+                  <div class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-icons align-middle pt-4">account_circle</span>
+                  </div>
+                  <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownMenuButton1">
+                    <li class="border-bottom pb-8"><a  class="ps-16" href="#">User.name</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                    <li><a class="dropdown-item" href="#">通知</a></li>
+                    <li><a class="dropdown-item" href="./member.html">會員頁面</a></li>
+                    <li><a class="dropdown-item" href="./trackandFavorites.html">追蹤&收藏</a></li>
+                    <li><a class="dropdown-item btn-login-out" href="./index.html">登出</a></li>
+                  </ul>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    
+<main>
+  <section class="container">
+    <div class="row py-40">
+      <div class="col-md-2 border-start border-3 border-primary">
+        <div class="d-flex align-items-start">
+          <div
+            class="nav flex-column nav-pills me-3"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <button
+              class="nav-link active text-start"
+              id="v-pills-course-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-course"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-course"
+              aria-selected="true"
+            >
+              課程列表
+            </button>
+            <button
+              class="nav-link text-start"
+              id="v-pills-giitar-tab-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-giitar-tab"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-giitar-tab"
+              aria-selected="false"
+            >
+              數位吉他譜
+            </button>
+            <button
+              class="nav-link text-start"
+              id="v-pills-messages-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-messages"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-messages"
+              aria-selected="false"
+            >
+              追蹤列表
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-course"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <section>
+              <h1 class="fs-3 mb-32">課程列表</h1>
+              <div class="col-md-8">
+                <div class="bg-light text-black">
+                  <div class="col-md-12 mb-24">
+                    <div
+                      class="search bg-light border border-2 border-primary mb-24"
+                    >
+                      <form
+                        class="d-flex align-items-center justify-content-between"
+                        action=""
+                      >
+                        <input
+                          class="border-0 w-75 px-16 fake-search"
+                          type="text"
+                          placeholder="搜索"
+                        />
+                        <select
+                          id="course"
+                          class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">全部</option>
+                          <option value="1">課程名稱</option>
+                          <option value="2">教師名稱</option>
+                          <option value="3">購買日期</option>
+                        </select>
+                        <a type="submit" class="border-0 rounded-0" href="#">
+                          <span
+                            class="bg-primary p-8 text-white material-icons-outlined d-block"
+                          >
+                            search
+                          </span>
+                        </a>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-black rounded-3">
+                <div class="row course-item-list">
+                  <div class="col-md-4">
+                    <div class="card h-100">
+                      <img
+                        src="./assets/images/guitar-board.png"
+                        class="card-img-top object-cover"
+                        alt="..."
+                        height="175"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">地獄練習一週掌握吉他音階用法</h5>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 50%"
+                            aria-valuenow="50"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-16">
+                          <p class="mb-0">50% 完成</p>
+                          <p class="mb-0">作者：</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-giitar-tab"
+            role="tabpanel"
+            aria-labelledby="v-pills-giitar-tab"
+          >
+            <section class="row mb-24">
+              <h1 class="fs-3 mb-24">數位吉他譜</h1>
+              <div class="col-md-8">
+                <div class="bg-light text-black">
+                  <div class="col-md-12 mb-24">
+                    <div
+                      class="search bg-light border border-2 border-primary mb-24"
+                    >
+                      <form
+                        class="d-flex align-items-center justify-content-between"
+                        action=""
+                      >
+                        <input
+                          class="border-0 w-75 px-16 fake-search"
+                          type="text"
+                          placeholder="搜索"
+                        />
+                        <select
+                          id="course"
+                          class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">全部</option>
+                          <option value="1">課程名稱</option>
+                          <option value="2">教師名稱</option>
+                          <option value="3">購買日期</option>
+                        </select>
+                        <a type="submit" class="border-0 rounded-0" href="#">
+                          <span
+                            class="bg-primary p-8 text-white material-icons-outlined d-block"
+                          >
+                            search
+                          </span>
+                        </a>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mt-24">
+                <div>
+                  <div class="row gap-24 gap-md-0">
+                    <div class="col-md-4">
+                      <div class="bg-light text-black rounded">
+                        <div
+                          class="text-black bg-white d-flex flex-column justify-content-between rounded"
+                        >
+                          <div class="ablum-top position-relative">
+                            <img
+                              class="img-fuild w-100 object-cover rounded-top"
+                              src="./assets/images/dog.png"
+                              alt="ablum-deer"
+                              height="175"
+                            />
+                            <button
+                              class="btn-info rounded-circle border-0 play-button"
+                              style="width: 50px; height: 50px"
+                            >
+                              <span class="material-icons align-middle">
+                                play_arrow
+                              </span>
+                            </button>
+                          </div>
+                          <div class="ablum-middle py-8 px-16">
+                            <div class="d-flex justify-content-between">
+                              <p class="fs-5 fw-bold">
+                                Lost in the <br />
+                                World
+                              </p>
+                              <button class="btn border-0">
+                                <span class="material-icons text-black">
+                                  more_vert
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-light text-black rounded">
+                        <div
+                          class="text-black bg-white d-flex flex-column justify-content-between rounded"
+                        >
+                          <div class="ablum-top position-relative">
+                            <img
+                              class="img-fuild w-100 object-cover rounded-top"
+                              src="./assets/images/dog.png"
+                              alt="ablum-deer"
+                              height="175"
+                            />
+                            <button
+                              class="btn-info rounded-circle border-0 play-button"
+                              style="width: 50px; height: 50px"
+                            >
+                              <span class="material-icons align-middle">
+                                play_arrow
+                              </span>
+                            </button>
+                          </div>
+                          <div class="ablum-middle py-8 px-16">
+                            <div class="d-flex justify-content-between">
+                              <p class="fs-5 fw-bold">
+                                Lost in the <br />
+                                World
+                              </p>
+                              <button class="btn border-0">
+                                <span class="material-icons text-black">
+                                  more_vert
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-light text-black rounded">
+                        <div
+                          class="text-black bg-white d-flex flex-column justify-content-between rounded"
+                        >
+                          <div class="ablum-top position-relative">
+                            <img
+                              class="img-fuild w-100 object-cover rounded-top"
+                              src="./assets/images/dog.png"
+                              alt="ablum-deer"
+                              height="175"
+                            />
+                            <button
+                              class="btn-info rounded-circle border-0 play-button"
+                              style="width: 50px; height: 50px"
+                            >
+                              <span class="material-icons align-middle">
+                                play_arrow
+                              </span>
+                            </button>
+                          </div>
+                          <div class="ablum-middle py-8 px-16">
+                            <div class="d-flex justify-content-between">
+                              <p class="fs-5 fw-bold">
+                                Lost in the <br />
+                                World
+                              </p>
+                              <button class="btn border-0">
+                                <span class="material-icons text-black">
+                                  more_vert
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-messages"
+            role="tabpanel"
+            aria-labelledby="v-pills-messages-tab"
+          >
+            <section>
+              <div class="row">
+                <p class="fs-3 fw-bold">已追蹤創作者</p>
+                <div class="col-md-8">
+                  <div class="text-black">
+                    <div class="col-md-12 mb-24">
+                      <div
+                        class="search bg-light border border-2 border-primary mb-24"
+                      >
+                        <form
+                          class="d-flex align-items-center justify-content-between"
+                          action=""
+                        >
+                          <input
+                            class="border-0 w-75 px-16 fake-search"
+                            type="text"
+                            placeholder="搜索"
+                          />
+                          <select
+                            id="course"
+                            class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">全部</option>
+                            <option value="1">所有人</option>
+                            <option value="2">追蹤者</option>
+                            <option value="3">學生</option>
+                          </select>
+                          <a type="submit" class="border-0 rounded-0" href="#">
+                            <span
+                              class="bg-primary p-8 text-white material-icons-outlined d-block"
+                            >
+                              search
+                            </span>
+                          </a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                      class="d-flex border border-3 border-primary bg-light text-black gap-16 p-24 rounded-2"
+                    >
+                      <div>
+                        <img
+                          class="rounded-circle object-cover"
+                          src="./assets/images/elearning-young-cute-beautiful-girl-remotely-giving-guitar-classes-home-with-notes 3.png"
+                          alt=""
+                          width="125"
+                          height="125"
+                        />
+                      </div>
+                      <div>
+                        <div>
+                          <p class="fw-bold">name</p>
+                          <p>追蹤時間：2022/12/31</p>
+                        </div>
+                        <div class="d-flex gap-16">
+                          <button class="btn btn-primary text-white">
+                            取消追蹤
+                          </button>
+                          <button class="btn btn-primary text-white">
+                            更多
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer border-top bg-black">
+      <div class="container py-104">
+        <div class="row flex-column align-items-center">
+          <div class="d-flex justify-content-center align-items-center mb-16">
+            <span class="bg-primary rounded-1 p-4 fs-4 me-8 font-monospace">Logo</span>
+            <a class="text-white fs-5 mb-0 font-monospace" href="./">94 | Guitar</a>
+          </div>
+
+          <div class="col-md-2 mb-32">
+            <ul class="list-unstyled d-flex gap-24 justify-content-center ms-0">
+              <li>
+                <a href="#"
+                  ><img
+                    class="social-media"
+                    src="./assets/images/facebook.png"
+                    alt="facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    class="social-media"
+                    src="./assets/images/instagram.png"
+                    alt="instagram"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="social-media"
+                    src="./assets/images/youtube.png"
+                    alt="youtube"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-2">
+            <div class="border-bottom text-center mb-8">
+              <h5 class="fs-5 fw-bold">關於</h5>
+            </div>
+
+            <ul class="list-unstyled ms-0 px-18 mb-0">
+              <li><a href="">關於 94 | 指彈</a></li>
+              <li><a href="">最新消息</a></li>
+              <li><a href="">會員服務條款</a></li>
+              <li><a href="">隱私權保護政策</a></li>
+              <li><a href="">著作權保護措施</a></li>
+              <li><a href="">重置與散播權保護措施</a></li>
+              <li><a href="">免責聲明免</a></li>
+              <li ><a href="">相關產品服務</a></liㄇ>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <div class="mb-48 mb-md-0">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">商務</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">合作媒體</a></li>
+                <li><a href="">學生與校園合作</a></li>
+              </ul>
+            </div>
+            <div class="d-md-none">
+              <div class="border-bottom text-center mb-8">
+                <h5 class="fs-5 fw-bold">其他</h5>
+              </div>
+  
+              <ul class="list-unstyled ms-0 px-18 mb-0">
+                <li><a href="">人才招募</a></li>
+                <li><a href="">創作者指南</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-md-2 d-none d-md-block">
+            <div class="border-bottom text-center mb-8">
+              <h5 class="fs-5 fw-bold">其他</h5>
+            </div>
+
+            <ul class="list-unstyled ms-0 px-18 mb-0">
+              <li><a href="">人才招募</a></li>
+              <li><a href="">創作者指南</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary py-4">
+        <p class="text-center text-white mb-0">
+          此網站為課程練習 請勿用於商業行為
+        </p>
+      </div>
+    </footer>
+    <section class="bs5-modal">
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content text-black ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">購物車</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body cart-modal d-flex flex-column gap-32">
+              <p class="text-info text-center fs-5 py-104 mb-0">目前沒有任何商品</p>
+              <!-- <div class="d-flex  justify-content-around p-16 border border-primary shadow-lg rounded-2 mb-32">
+                <img class="object-cover"
+                src="https://img-c.udemycdn.com/course/480x270/1057050_8ba2.jpg" 
+                alt=""
+                width="125"
+                height="125">
+                <div>
+                  <p>課程名稱：item1</p>
+                  <div class="d-flex gap-8 ">
+                    <p>價格</p>
+                    <p>$330</p>
+                    <p class="text-info text-decoration-line-through ">$2290</p>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-danger">刪除</button>
+                  </div>
+
+                </div>
+
+                
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <div class="d-flex">
+                <p class="cart-price-total">總金額：0 NTD</p>
+              </div>
+              <a class="btn btn-primary text-white buy-check" href="./buy.html">馬上付款</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/images/guitar.png" type="image/x-icon">
     <title>94 | Guitar</title>
     <!-- Boostrap5 -->
     <link
@@ -29,13 +30,13 @@
   </head>
 
   <body>
-    <header class="sticky-top shadow">
+    <header class="sticky-top shadow position-relative">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
           <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
-          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start">
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start ">
             <li class=" position-relative my-auto">
               <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <span class="material-icons text-white"> shopping_cart 
@@ -44,7 +45,21 @@
               </a>
             </li>
             <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
-              <a class="fs-5 fw-bold text-white" href="./login.html">Login</a>
+              <a class="fs-5 fw-bold text-white nav-login" href="./login.html">Login</a>
+           
+                <div class="dropdown dropdown-account d-none">
+                  <div class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-icons align-middle pt-4">account_circle</span>
+                  </div>
+                  <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownMenuButton1">
+                    <li class="border-bottom pb-8"><a  class="ps-16" href="#">User.name</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                    <li><a class="dropdown-item" href="#">通知</a></li>
+                    <li><a class="dropdown-item" href="./member.html">會員頁面</a></li>
+                    <li><a class="dropdown-item" href="./trackandFavorites.html">追蹤&收藏</a></li>
+                    <li><a class="dropdown-item btn-login-out" href="./index.html">登出</a></li>
+                  </ul>
+                </div>
             </li>
           </ul>
         </div>
@@ -101,12 +116,12 @@
             </button>
             <button
               class="nav-link text-start"
-              id="v-pills-settings-tab"
+              id="v-pills-his-tab"
               data-bs-toggle="pill"
-              data-bs-target="#v-pills-settings"
+              data-bs-target="#v-pills-his"
               type="button"
               role="tab"
-              aria-controls="v-pills-settings"
+              aria-controls="v-pills-his"
               aria-selected="false"
             >
               歷史紀錄
@@ -364,10 +379,10 @@
                   </button>
                 </div>
                 <div
-                  class="course-price d-flex flex-column gap-16 overflow-auto h-475"
+                  class="course-price d-flex flex-column gap-16 overflow-auto h-475 mb-24"
                 >
                   <div
-                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                    class="list-course d-flex flex-column flex-md-row justify-content-around align-items-center text-black bg-light rounded-2 p-8"
                   >
                     <div class="list-course-image">
                       <img
@@ -403,7 +418,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="list-course-end d-flex gap-4 flex-column">
+                    <div
+                      class="list-course-end d-flex gap-4 flex-row flex-md-column"
+                    >
                       <a class="btn btn-primary text-white" href="#">編輯</a>
                       <a class="btn btn-primary text-white disabled" href="#"
                         >上架</a
@@ -412,7 +429,7 @@
                     </div>
                   </div>
                   <div
-                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                    class="list-course d-flex flex-column flex-md-row justify-content-around align-items-center text-black bg-light rounded-2 p-8"
                   >
                     <div class="list-course-image">
                       <img
@@ -448,7 +465,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="list-course-end d-flex gap-4 flex-column">
+                    <div
+                      class="list-course-end d-flex gap-4 flex-row flex-md-column"
+                    >
                       <a class="btn btn-primary text-white" href="#">編輯</a>
                       <a class="btn btn-primary text-white disabled" href="#"
                         >上架</a
@@ -457,7 +476,7 @@
                     </div>
                   </div>
                   <div
-                    class="list-course d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                    class="list-course d-flex flex-column flex-md-row justify-content-around align-items-center text-black bg-light rounded-2 p-8"
                   >
                     <div class="list-course-image">
                       <img
@@ -493,7 +512,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="list-course-end d-flex gap-4 flex-column">
+                    <div
+                      class="list-course-end d-flex gap-4 flex-row flex-md-column"
+                    >
                       <a class="btn btn-primary text-white" href="#">編輯</a>
                       <a class="btn btn-primary text-white disabled" href="#"
                         >上架</a
@@ -512,7 +533,7 @@
                   class="article-content d-flex flex-column gap-16 overflow-auto h-475"
                 >
                   <div
-                    class="list-article d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                    class="list-article d-flex flex-column flex-md-row justify-content-around align-items-center text-black bg-light rounded-2 p-8"
                   >
                     <div class="list-article-image">
                       <img
@@ -536,7 +557,9 @@
                         <p>500</p>
                       </div>
                     </div>
-                    <div class="list-article-end d-flex flex-column gap-4">
+                    <div
+                      class="list-article-end d-flex flex-row flex-md-column gap-4"
+                    >
                       <a class="btn btn-primary text-white" href="#">編輯</a>
                       <a class="btn btn-primary text-white disabled" href="#"
                         >上架</a
@@ -545,7 +568,7 @@
                     </div>
                   </div>
                   <div
-                    class="list-article d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
+                    class="list-article d-flex flex-column flex-md-row justify-content-around align-items-center text-black bg-light rounded-2 p-8"
                   >
                     <div class="list-article-image">
                       <img
@@ -569,40 +592,9 @@
                         <p>500</p>
                       </div>
                     </div>
-                    <div class="list-article-end d-flex flex-column gap-4">
-                      <a class="btn btn-primary text-white" href="#">編輯</a>
-                      <a class="btn btn-primary text-white disabled" href="#"
-                        >上架</a
-                      >
-                      <a class="btn btn-primary text-white" href="#">下架</a>
-                    </div>
-                  </div>
-                  <div
-                    class="list-article d-flex justify-content-around align-items-center text-black bg-light rounded-2 p-8"
-                  >
-                    <div class="list-article-image">
-                      <img
-                        class="object-cover"
-                        src="./assets/images/guitar-board.png"
-                        alt="guitar-board"
-                        width="100"
-                        height="100"
-                      />
-                    </div>
-                    <div class="list-article-middle d-flex flex-column gap-8">
-                      <a class="fw-bold text-black" href="#"
-                        >FingerStyle流派介紹</a
-                      >
-                      <div class="d-flex">
-                        <p class="mb-0">評分：</p>
-                        <p class="mb-0">4.5</p>
-                      </div>
-                      <div class="d-flex">
-                        <p>收藏數量：</p>
-                        <p>500</p>
-                      </div>
-                    </div>
-                    <div class="list-article-end d-flex flex-column gap-4">
+                    <div
+                      class="list-article-end d-flex flex-row flex-md-column gap-4"
+                    >
                       <a class="btn btn-primary text-white" href="#">編輯</a>
                       <a class="btn btn-primary text-white disabled" href="#"
                         >上架</a
@@ -617,10 +609,10 @@
                   <div class="d-flex gap-24 mb-16">
                     <p class="fs-4 fw-bold my-auto">上傳專輯</p>
                     <button class="btn btn-primary text-white" href="#">
-                      + 新增課程
+                      + 新增專輯
                     </button>
                   </div>
-                  <div class="row">
+                  <div class="row gap-24 gap-md-0">
                     <div class="col-md-4">
                       <div class="bg-light text-black rounded">
                         <div
@@ -736,8 +728,25 @@
                 </div>
               </div>
             </section>
+            <section class="row mb-32">
+              <div class="col-md-6">
+                <div id="follow-groups"></div>
+              </div>
+              <div class="col-md-6">
+                <div id="commodity"></div>
+              </div>
+            </section>
             <section class="row">
-              <div class="col" id="donutchart"></div>
+              <div class="col-md-8">
+                <div id="chart_price"></div>
+              </div>
+              <div class="col-md-4">
+                <ul class="d-flex flex-column gap-4 list-unstyled fs-5">
+                  <li>去年收益：$ 0 NTD</li>
+                  <li>今年收益：$ 115,000 NTD</li>
+                  <li class="fw-bold">總收益：$ 115,000 NTD</li>
+                </ul>
+              </div>
             </section>
           </div>
 
@@ -747,15 +756,227 @@
             role="tabpanel"
             aria-labelledby="v-pills-messages-tab"
           >
-            ...
+            <section>
+              <div class="row">
+                <p class="fs-3 fw-bold">發佈消息</p>
+                <div class="col-md-8">
+                  <div class="bg-light text-black">
+                    <div class="col-md-12 mb-24">
+                      <div
+                        class="search bg-light border border-2 border-primary mb-24"
+                      >
+                        <form
+                          class="d-flex align-items-center justify-content-between"
+                          action=""
+                        >
+                          <input
+                            class="border-0 w-75 px-16 fake-search"
+                            type="text"
+                            placeholder="搜索發佈內容"
+                          />
+                          <select
+                            id="course"
+                            class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">全部</option>
+                            <option value="1">所有人</option>
+                            <option value="2">追蹤者</option>
+                            <option value="3">學生</option>
+                          </select>
+                          <a type="submit" class="border-0 rounded-0" href="#">
+                            <span
+                              class="bg-primary p-8 text-white material-icons-outlined d-block"
+                            >
+                              search
+                            </span>
+                          </a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-32">
+                <div class="col">
+                  <!-- big window -->
+                  <div
+                    class="text-black p-16 border border-dashed border-primary border-3 rounded-3 h-475 overflow-auto"
+                  >
+                    <!-- card demo -->
+                    <div class="row justify-content-center gap-16">
+                      <div
+                        class="col-md-11 message-card bg-light p-16 rounded d-flex flex-column flex-md-row justify-content-around align-items-center gap-16"
+                      >
+                        <div class="message-top">
+                          <img
+                            class="object-cover img-fuild rounded-circle"
+                            src="./assets/images/guitar-board.png"
+                            alt=""
+                            width="75"
+                            height="75"
+                          />
+                        </div>
+                        <div class="message-middle w-75">
+                          <p class="">
+                            公告：新課程-地獄練習一週掌握吉他音階用法
+                          </p>
+                          <p>
+                            Hi,
+                            各位同學好我是魯凱老師最今新上架的課程，這課程中我規劃了一個禮拜吉他音階用法若你對課程有興趣早鳥同學除了獲得優惠外,
+                            還額外提供優惠碼只要是我上架的相關商品皆...
+                            <a href="#">more</a>
+                          </p>
+                        </div>
+                        <div
+                          class="message-footer d-flex flex-row flex-md-column gap-16"
+                        >
+                          <button class="btn btn-primary text-white fw-bold">
+                            編輯
+                          </button>
+                          <button class="btn btn-primary text-white fw-bold">
+                            刪除
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-11 message-card bg-light p-16 rounded d-flex flex-column flex-md-row justify-content-around align-items-center gap-16"
+                      >
+                        <div class="message-top">
+                          <img
+                            class="object-cover img-fuild rounded-circle"
+                            src="./assets/images/guitar-board.png"
+                            alt=""
+                            width="75"
+                            height="75"
+                          />
+                        </div>
+                        <div class="message-middle w-75">
+                          <p class="">
+                            公告：新課程-地獄練習一週掌握吉他音階用法
+                          </p>
+                          <p>
+                            Hi,
+                            各位同學好我是魯凱老師最今新上架的課程，這課程中我規劃了一個禮拜吉他音階用法若你對課程有興趣早鳥同學除了獲得優惠外,
+                            還額外提供優惠碼只要是我上架的相關商品皆...
+                            <a href="#">more</a>
+                          </p>
+                        </div>
+                        <div
+                          class="message-footer d-flex flex-row flex-md-column gap-16"
+                        >
+                          <button class="btn btn-primary text-white fw-bold">
+                            編輯
+                          </button>
+                          <button class="btn btn-primary text-white fw-bold">
+                            刪除
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div
+                    class="border border-dashed border-primary border-3 rounded-3 p-24"
+                  >
+                    <form action="">
+                      <div class="d-flex flex-column gap-4 mb-32">
+                        <label class="fs-4 fw-bold" for="message-title"
+                          >標題</label
+                        >
+                        <div class="d-flex gap-32">
+                          <input
+                            class="w-75 border-0 p-4"
+                            type="text"
+                            name=""
+                            id="message-title"
+                            placeholder="請輸入消息標題"
+                          />
+                          <select
+                            id="course"
+                            class="w-auto form-select form-select-sm rounded-3 text-dark"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">全部</option>
+                            <option value="1">所有人</option>
+                            <option value="2">追蹤者</option>
+                            <option value="3">學生</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <label class="fs-4 fw-bold" for="message-content"
+                          >內容</label
+                        >
+                        <textarea
+                          name="message-content"
+                          id="message-content"
+                          cols="30"
+                          rows="10"
+                          style="resize: none"
+                          placeholder="請在這裡輸入你想發送的消息"
+                        ></textarea>
+                      </div>
+                      <div class="d-flex">
+                        <input
+                          class="btn btn-primary text-white fw-bold ms-auto mt-32"
+                          type="submit"
+                          value="發送消息"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
           <div
             class="tab-pane fade"
-            id="v-pills-settings"
+            id="v-pills-his"
             role="tabpanel"
-            aria-labelledby="v-pills-settings-tab"
+            aria-labelledby="v-pills-his-tab"
           >
-            ...
+            <p class="fs-3 fw-bold">歷史查詢</p>
+            <div class="col-md-8">
+              <div class="bg-light text-black">
+                <div class="col-md-12 mb-24">
+                  <div
+                    class="search bg-light border border-2 border-primary mb-24"
+                  >
+                    <form
+                      class="d-flex align-items-center justify-content-between"
+                      action=""
+                    >
+                      <input
+                        class="border-0 w-75 px-16 fake-search"
+                        type="text"
+                        placeholder="搜索"
+                      />
+                      <select
+                        id="course"
+                        class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                        aria-label="Default select example"
+                      >
+                        <option selected="">全部</option>
+                        <option value="1">所有人</option>
+                        <option value="2">追蹤者</option>
+                        <option value="3">學生</option>
+                      </select>
+                      <a type="submit" class="border-0 rounded-0" href="#">
+                        <span
+                          class="bg-primary p-8 text-white material-icons-outlined d-block"
+                        >
+                          search
+                        </span>
+                      </a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

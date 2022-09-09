@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/images/guitar.png" type="image/x-icon">
     <title>94 | Guitar</title>
     <!-- Boostrap5 -->
     <link
@@ -29,13 +30,13 @@
   </head>
 
   <body>
-    <header class="sticky-top shadow">
+    <header class="sticky-top shadow position-relative">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
           <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
-          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start">
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start ">
             <li class=" position-relative my-auto">
               <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <span class="material-icons text-white"> shopping_cart 
@@ -44,7 +45,21 @@
               </a>
             </li>
             <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
-              <a class="fs-5 fw-bold text-white" href="./login.html">Login</a>
+              <a class="fs-5 fw-bold text-white nav-login" href="./login.html">Login</a>
+           
+                <div class="dropdown dropdown-account d-none">
+                  <div class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-icons align-middle pt-4">account_circle</span>
+                  </div>
+                  <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownMenuButton1">
+                    <li class="border-bottom pb-8"><a  class="ps-16" href="#">User.name</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                    <li><a class="dropdown-item" href="#">通知</a></li>
+                    <li><a class="dropdown-item" href="./member.html">會員頁面</a></li>
+                    <li><a class="dropdown-item" href="./trackandFavorites.html">追蹤&收藏</a></li>
+                    <li><a class="dropdown-item btn-login-out" href="./index.html">登出</a></li>
+                  </ul>
+                </div>
             </li>
           </ul>
         </div>
@@ -250,10 +265,12 @@
         </div>
 
         <div class="row flex-row">
-          <ul class="list-unstyled gap-16 article-list col-md-8">
-            <h2 class="article-list-title mb-32">熱門文章</h2>
+          <ul
+            class="list-unstyled d-flex flex-column gap-32 article-list col-md-8"
+          >
+            <h2 class="article-list-title mb-16">熱門文章</h2>
             <li>
-              <div class="article d-flex text-white gap-16" href="#">
+              <div class="article d-flex text-white gap-16">
                 <div>
                   <img
                     class="object-cover"
@@ -273,7 +290,49 @@
                       <p>
                         <a
                           class="articles-author text-white text-decoration-underline"
-                          href="#"
+                          href="./imagePage.html"
+                          >魯凱</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="articles-title articles-content">
+                    Minor Pentatonic Scale, Major Pentatonic Scale, Mix
+                    Pentatonic Scale, Major Scale...等
+                  </p>
+                  <div class="d-flex justify-content-between">
+                    <time>2022/10/17</time>
+                    <div class="d-flex text-info">
+                      <p>觀看次數：</p>
+                      <p class="articles-viewer">500</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="article d-flex text-white gap-16">
+                <div>
+                  <img
+                    class="object-cover"
+                    src="./assets/images/guitar-player-2.png"
+                    alt=""
+                    width="150"
+                    height="150"
+                  />
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between">
+                    <p class="articles-title fs-5 mb-4">
+                      <a class="text-white" href="#">掌握吉他音階用法</a>
+                    </p>
+                    <div class="d-flex">
+                      <p>作者：</p>
+                      <p>
+                        <a
+                          class="articles-author text-white text-decoration-underline"
+                          href="./imagePage.html"
                           >魯凱</a
                         >
                       </p>
@@ -336,7 +395,7 @@
                 class="d-flex align-items-center gap-8 w-100 justify-content-around"
                 href="#"
               >
-                <p class="fs-1 fw-bold text-white">-1</p>
+                <p class="fs-1 fw-bold text-white">-2</p>
                 <div
                   class="d-flex bg-light ablum-rounded p-16 justify-content-around align-items-center flex-row flex-md-column flex-lg-row rounded-3 gap-8"
                 >

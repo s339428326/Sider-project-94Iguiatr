@@ -27,7 +27,7 @@ AOS.init({
   throttleDelay: 99,
   // the delay on throttle used while scrolling the page (advanced)
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120,
+  offset: 50,
   // offset (in px) from the original trigger point
   delay: 0,
   // values from 0 to 3000, with step 50ms
@@ -66,24 +66,41 @@ var swiper = new Swiper(".swiper-course", {
 //url checker
 
 var urlLocation = window.location.href.split("/");
-var fileName = urlLocation[urlLocation.length - 1]; //Api data
+var fileName = urlLocation[urlLocation.length - 1];
+console.log(urlLocation, fileName); //Api data
 
 var userData = []; //搜尋結果
 
 var filteredData = []; //購物車
 
-var cartData = []; //購買確認
+var cartData = []; //已購買商品
 
-var confirmPurchase = false;
+var myItemList = [];
 var priceTotal = 0;
 var body = document.querySelector("body");
 var cartModal = document.querySelector(".cart-modal");
 var cartPriceTotal = document.querySelector(".cart-price-total");
 var cartCounter = document.querySelector(".cart-counter");
 var buyCheck = document.querySelector(".buy-check");
-var btnCartModal = document.querySelector(".btn-cart-modal"); //取得本地購物車內容
+var btnCartModal = document.querySelector(".btn-cart-modal"); //登入
 
-getloaclCart();
+var navLogin = document.querySelector(".nav-login");
+var dropdownAccount = document.querySelector(".dropdown-account");
+var btnLoginOut = document.querySelector(".btn-login-out"); //取得本地購物車內容
+
+getloaclCart(); //取得購買課程資訊
+
+getmyItemList();
+
+function getmyItemList() {
+  if (JSON.parse(localStorage.getItem("course")) !== null) {
+    myItemList = JSON.parse(localStorage.getItem("course"));
+  } else {
+    myItemList = [];
+  }
+
+  console.log(myItemList);
+}
 
 function getloaclCart() {
   var cartlist;
@@ -154,6 +171,12 @@ function addCart(id) {
     return alert("此項目已在購物車內");
   }
 
+  if (myItemList.some(function (item) {
+    return item.id === id;
+  })) {
+    return alert("此項目購買請查看 追蹤 & 收藏");
+  }
+
   cartData.push(cartItme);
   localStorage.setItem("cart", JSON.stringify(cartData)); //updata price
 
@@ -205,7 +228,7 @@ function courseModal(id) {
   var item = userData.find(function (item) {
     return item.id === id;
   });
-  modalContent.innerHTML = "\n    <div class=\"modal-header border-0 p-4\">\n    <img\n      class=\"object-cover img-fuild w-100\"\n      src=\" ".concat(item.course.img, "\"\n      alt=\"\"\n    />\n  </div>\n  <div class=\"modal-body text-black\">\n    <h5 class=\"modal-title mb-8\" id=\"exampleModalLabel\">\n      ").concat(item.course.name, "\n    </h5>\n\n    <div\n      class=\"d-flex justify-content-around my-16 flex-column flex-md-row justify-content-center align-items-center\"\n    >\n      <img\n        class=\"rounded-circle\"\n        src=\"").concat(item.avatar, "\"\n        alt=\"\"\n        width=\"128\"\n        height=\"128\"\n      />\n      <div class=\"list-unstyled\">\n        <div>\n          <p class=\"text-center text-md-start\">\n            \u8B1B\u5E2B\uFF1A<a href=\"#\"\n              >").concat(item.last_name + " " + item.first_name, "</a\n            >\n          </p>\n          <ul\n            class=\"list-unstyled bg-primary d-flex rounded-3 p-8 gap-4 justify-content-around\"\n          >\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/instagram.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n              /></a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/facebook.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/youtube.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n          </ul>\n        </div>\n\n        <div class=\"d-flex gap-8\">\n          <ul class=\"list-unstyled\">\n            <li>\u6559\u5B78\u7D93\u6B77\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n          <ul class=\"list-unstyled\">\n            <li>\u53C3\u8CFD\u7D93\u9A57\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n        </div>\n      </div>\n      <div></div>\n    </div>\n    <div class=\"row border text-center mb-32\">\n      <div class=\"col-4 border-end\">\n        <p>\u5B78\u751F\u4EBA\u6578</p>\n        <p class=\"mb-0\">").concat(item.course.studentNumber, "</p>\n      </div>\n      <div class=\"col-4 border-end\">\n        <p>\u8AB2\u7A0B\u5206\u6578</p>\n        <p class=\"course-score mb-0\">").concat(item.course.rating, "</p>\n      </div>\n      <div class=\"col-4\">\n        <p>\u8AB2\u7A0B\u7E3D\u6642\u6578</p>\n        <p class=\"course-time mb-0\">").concat(item.course.courseHours, "</p>\n      </div>\n    </div>\n\n    <div class=\"d-flex justify-content-around\">\n      <div>\n        <h5>\u8AB2\u7A0B\u5167\u5BB9\uFF1A</h5>\n        <ul>\n          <li>item1</li>\n          <li>item2</li>\n          <li>item3</li>\n          <li>item4</li>\n        </ul>\n      </div>\n\n      <div>\n        <h5 class=\"fw-bold\">\u6B64\u8AB2\u7A0B\u6B0A\u76CA\uFF1A</h5>\n        <ul class=\"list-unstyled\">\n          <li>30 \u5929\u9000\u6B3E\u4FDD\u8B49</li>\n          <li>\u900F\u904E\u88DD\u7F6E\u8207\u96FB\u8996\u5B58\u53D6</li>\n          <li>\u5B8C\u6574\u7D42\u8EAB\u5B58\u53D6\u6B0A</li>\n          <li>\u7D50\u696D\u8B49\u66F8</li>\n        </ul>\n      </div>\n    </div>\n    <ul class=\"d-flex gap-16 list-unstyled justify-content-center\">\n      <li><a href=\"#\">\u5206\u4EAB</a></li>\n      <li><a href=\"#\">\u5C07\u6B64\u8AB2\u7A0B\u8D08\u9001</a></li>\n      <li><a href=\"#\">\u5957\u7528\u512A\u60E0\u5377</a></li>\n    </ul>\n  </div>\n  <div class=\"modal-footer\">\n    <div class=\"d-flex gap-8\">\n      <p class=\"fs-5 text-black\">\u5B9A\u50F9\uFF1A").concat(item.course.discountPrice, "</p>\n      <p\n        class=\"course-discountPrice text-decoration-line-through text-info mt-auto\"\n      >\n        ").concat(item.course.price, "\n      </p>\n    </div>\n    <button\n      class=\"btn btn-primary w-100 text-white btn-cart mb-8\"\n      data-id=\"").concat(item.id, "\"\n    >\n      \u65B0\u589E\u81F3\u8CFC\u7269\u8ECA\n    </button>\n    <button\n      type=\"button\"\n      class=\"btn btn-secondary w-100\"\n      data-bs-dismiss=\"modal\"\n    >\n      Close\n    </button>\n  </div>\n      ");
+  modalContent.innerHTML = "\n    <div class=\"modal-header border-0 p-4\">\n    <img\n      class=\"object-cover img-fuild w-100\"\n      src=\" ".concat(item.course.img, "\"\n      alt=\"\"\n    />\n  </div>\n  <div class=\"modal-body text-black\">\n    <h5 class=\"modal-title mb-8\" id=\"exampleModalLabel\">\n      ").concat(item.course.name, "\n    </h5>\n\n    <div\n      class=\"d-flex justify-content-around my-16 flex-column flex-md-row justify-content-center align-items-center\"\n    >\n      <img\n        class=\"rounded-circle\"\n        src=\"").concat(item.avatar, "\"\n        alt=\"\"\n        width=\"128\"\n        height=\"128\"\n      />\n      <div class=\"list-unstyled\">\n        <div>\n          <p class=\"text-center text-md-start\">\n            \u8B1B\u5E2B\uFF1A<a href=\"./imagePage.html\"\n              >").concat(item.last_name + " " + item.first_name, "</a\n            >\n          </p>\n          <ul\n            class=\"list-unstyled bg-primary d-flex rounded-3 p-8 gap-4 justify-content-around\"\n          >\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/instagram.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n              /></a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/facebook.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n            <li>\n              <a href=\"#\">\n                <img\n                  src=\"./assets/images/youtube.png\"\n                  alt=\"\"\n                  width=\"25\"\n                  height=\"25\"\n                />\n              </a>\n            </li>\n          </ul>\n        </div>\n\n        <div class=\"d-flex gap-8\">\n          <ul class=\"list-unstyled\">\n            <li>\u6559\u5B78\u7D93\u6B77\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n          <ul class=\"list-unstyled\">\n            <li>\u53C3\u8CFD\u7D93\u9A57\uFF1A</li>\n            <li>item</li>\n            <li>item</li>\n            <li>item</li>\n          </ul>\n        </div>\n      </div>\n      <div></div>\n    </div>\n    <div class=\"row border text-center mb-32\">\n      <div class=\"col-4 border-end\">\n        <p>\u5B78\u751F\u4EBA\u6578</p>\n        <p class=\"mb-0\">").concat(item.course.studentNumber, "</p>\n      </div>\n      <div class=\"col-4 border-end\">\n        <p>\u8AB2\u7A0B\u5206\u6578</p>\n        <p class=\"course-score mb-0\">").concat(item.course.rating, "</p>\n      </div>\n      <div class=\"col-4\">\n        <p>\u8AB2\u7A0B\u7E3D\u6642\u6578</p>\n        <p class=\"course-time mb-0\">").concat(item.course.courseHours, "</p>\n      </div>\n    </div>\n\n    <div class=\"d-flex justify-content-around\">\n      <div>\n        <h5>\u8AB2\u7A0B\u5167\u5BB9\uFF1A</h5>\n        <ul>\n          <li>item1</li>\n          <li>item2</li>\n          <li>item3</li>\n          <li>item4</li>\n        </ul>\n      </div>\n\n      <div>\n        <h5 class=\"fw-bold\">\u6B64\u8AB2\u7A0B\u6B0A\u76CA\uFF1A</h5>\n        <ul class=\"list-unstyled\">\n          <li>30 \u5929\u9000\u6B3E\u4FDD\u8B49</li>\n          <li>\u900F\u904E\u88DD\u7F6E\u8207\u96FB\u8996\u5B58\u53D6</li>\n          <li>\u5B8C\u6574\u7D42\u8EAB\u5B58\u53D6\u6B0A</li>\n          <li>\u7D50\u696D\u8B49\u66F8</li>\n        </ul>\n      </div>\n    </div>\n    <ul class=\"d-flex gap-16 list-unstyled justify-content-center\">\n      <li><a href=\"#\">\u5206\u4EAB</a></li>\n      <li><a href=\"#\">\u5C07\u6B64\u8AB2\u7A0B\u8D08\u9001</a></li>\n      <li><a href=\"#\">\u5957\u7528\u512A\u60E0\u5377</a></li>\n    </ul>\n  </div>\n  <div class=\"modal-footer\">\n    <div class=\"d-flex gap-8\">\n      <p class=\"fs-5 text-black\">\u5B9A\u50F9\uFF1A").concat(item.course.discountPrice, "</p>\n      <p\n        class=\"course-discountPrice text-decoration-line-through text-info mt-auto\"\n      >\n        ").concat(item.course.price, "\n      </p>\n    </div>\n    <button\n      class=\"btn btn-primary w-100 text-white btn-cart mb-8\"\n      data-id=\"").concat(item.id, "\"\n    >\n      \u65B0\u589E\u81F3\u8CFC\u7269\u8ECA\n    </button>\n    <button\n      type=\"button\"\n      class=\"btn btn-secondary w-100\"\n      data-bs-dismiss=\"modal\"\n    >\n      Close\n    </button>\n  </div>\n      ");
 } //確認點擊購物車或者是more btn
 
 
@@ -224,8 +247,8 @@ body.addEventListener("click", function (e) {
     deletCart(targetNumber); //更新buy.html
 
     if (fileName.toLowerCase().includes("buy")) {
-      buyListCreatHTML(cartData);
       updataBuyPrice(priceTotal);
+      buyListCreatHTML(cartData);
     }
   }
 });
@@ -242,6 +265,19 @@ btnCartModal.addEventListener("click", function (e) {
     buyCheck.classList.remove("disabled");
   }
 });
+btnLoginOut.addEventListener("click", function (e) {
+  localStorage.setItem("login", false);
+});
+
+if (localStorage.getItem("login") === "true") {
+  dropdownAccount.classList.remove("d-none");
+  navLogin.classList.add("d-none");
+}
+
+if (localStorage.getItem("login") === "false") {
+  dropdownAccount.classList.add("d-none");
+  navLogin.classList.remove("d-none");
+}
 "use strict";
 
 if (fileName.toLowerCase().includes("buy")) {
@@ -278,46 +314,128 @@ if (fileName.toLowerCase().includes("buy")) {
 }
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+if (fileName.toLowerCase().includes("login")) {
+  var btnLogin = document.querySelector(".btn-login");
+  btnLogin.addEventListener("click", function (e) {
+    localStorage.setItem("login", true);
+    dropdownAccount.classList.remove(".d-none");
+    navLogin.classList.add(".d-none");
+  });
+}
+"use strict";
 
 if (fileName.toLowerCase().includes("member")) {
-  var drawChart = function drawChart() {
-    var _options;
-
+  var drawChartFollow = function drawChartFollow() {
     var data = google.visualization.arrayToDataTable([["年齡族群", "數量"], ["0~15歲", 20], ["16~23歲", 120], ["24~35歲", 90], ["36~45歲", 25], ["46~55歲", 10], ["55~65歲", 5], ["65以上", 3]]);
-    var options = (_options = {
+    var options = {
       title: "追蹤族群",
       pieHole: 0.4,
       width: 400,
-      height: 500,
+      height: 400,
       backgroundColor: "transparent",
       titleTextStyle: {
         color: "white",
-        fontSize: 16
+        fontSize: 36,
+        bold: true
+      },
+      chartArea: {
+        left: 20,
+        // top: -10,
+        width: "100%",
+        height: "75%"
+      },
+      legend: {
+        textStyle: {
+          color: "white",
+          fontSize: 16
+        }
       }
-    }, _defineProperty(_options, "titleTextStyle", {
-      color: "white",
-      fontSize: 36,
-      bold: true
-    }), _defineProperty(_options, "chartArea", {
-      left: 20,
-      // top: -10,
-      width: "100%",
-      height: "75%"
-    }), _defineProperty(_options, "legend", {
-      textStyle: {
-        color: "white",
-        fontSize: 16
-      }
-    }), _options);
-    var chart = new google.visualization.PieChart(document.getElementById("donutchart"));
+    };
+    var chart = new google.visualization.PieChart(document.getElementById("follow-groups"));
     chart.draw(data, options);
   };
 
+  var drawChartCommodity = function drawChartCommodity() {
+    var data = google.visualization.arrayToDataTable([["商品種類", "數量"], ["數位商品", 150], ["實體商品", 20], ["其他", 10]]);
+    var options = {
+      title: "上架收益佔比",
+      pieHole: 0.4,
+      width: 400,
+      height: 400,
+      backgroundColor: "transparent",
+      titleTextStyle: {
+        color: "white",
+        fontSize: 36,
+        bold: true
+      },
+      chartArea: {
+        left: 20,
+        // top: -10,
+        width: "100%",
+        height: "75%"
+      },
+      legend: {
+        textStyle: {
+          color: "white",
+          fontSize: 16
+        }
+      }
+    };
+    var chart = new google.visualization.PieChart(document.getElementById("commodity"));
+    chart.draw(data, options);
+  };
+
+  var drawStacked = function drawStacked() {
+    var data = google.visualization.arrayToDataTable([["月份", "NTD"], ["1月", 2000], ["2月", 3000], ["3月", 10000], ["4月", 3000], ["5月", 10000], ["6月", 12000], ["7月", 20000], ["8月", 5000], ["9月", 8000], ["10月", 9000], ["11月", 12000], ["12月", 21000]]);
+    var options = {
+      title: "收益",
+      chartArea: {
+        width: "50%"
+      },
+      isStacked: true,
+      width: 400,
+      height: 400,
+      backgroundColor: "transparent",
+      legend: {
+        textStyle: {
+          color: "white",
+          fontSize: 16
+        }
+      },
+      titleTextStyle: {
+        color: "white",
+        fontSize: 36,
+        bold: true
+      },
+      hAxis: {
+        title: "總收益",
+        minValue: 0,
+        titleTextStyle: {
+          color: "white",
+          fontSize: 16,
+          bold: true
+        }
+      },
+      vAxis: {
+        title: "月份",
+        titleTextStyle: {
+          color: "white",
+          fontSize: 16,
+          bold: true
+        }
+      }
+    };
+    var chart = new google.visualization.BarChart(document.getElementById("chart_price"));
+    chart.draw(data, options);
+  };
+
+  //   google.charts.load("current", { packages: ["corechart"] });
   google.charts.load("current", {
-    packages: ["corechart"]
+    packages: ["corechart", "bar"]
   });
-  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChartFollow);
+  google.charts.setOnLoadCallback(drawChartCommodity);
+  google.charts.setOnLoadCallback(drawStacked);
 }
 "use strict";
 
@@ -327,7 +445,17 @@ if (fileName.toLowerCase().includes("payment")) {
   paymentTotal.innerHTML = "$ ".concat(priceTotal, " NTD");
   btnCartModal.dataset.bsTarget = "";
   btnPayment.addEventListener("click", function (e) {
-    localStorage.clear("cart");
+    if (myItemList.length > 0) {
+      var newItem = cartData;
+      var oldMyItem = JSON.parse(localStorage.getItem("course"));
+      newItem = oldMyItem.concat(newItem);
+      localStorage.setItem("course", JSON.stringify(newItem));
+      localStorage.setItem("cart", JSON.stringify([]));
+    } else {
+      localStorage.setItem("course", JSON.stringify(cartData));
+      localStorage.setItem("cart", JSON.stringify([]));
+    }
+
     cartData = [];
   });
 }
@@ -352,7 +480,7 @@ if (fileName.toLowerCase().includes("search")) {
 
     var styleSwitch = filteredData.length ? "col-md-4 mb-24" : "swiper-slide";
     data.forEach(function (item) {
-      html += "\n            <div class=\"".concat(styleSwitch, "\">\n            <div class=\"course-card bg-light text-black rounded-2 me-md-16\">\n              <div class=\"course-head\">\n                <img\n                  class=\"object-cover rounded-top justify-content-center img-fluid w-100\"\n                  src=\"").concat(item.course.img, "\"\n                  alt=\"player-guitar\"\n                />\n                <div class=\"d-flex justify-content-center mt-8\">\n                  <p class=\"course-name\">").concat(item.course.name, "</p>\n                </div>\n              </div>\n              <div class=\"course-footer bg-primary rounded-bottom\">\n                <div class=\"d-flex justify-content-center border-bottom py-8\">\n                  <p class=\"course-price pe-8 mb-0\">\u8D85\u503C\u50F9\u683C\uFF1A").concat(item.course.discountPrice, "</p>\n                  <p\n                    class=\"course-discountPrice text-decoration-line-through mb-0 text-info\"\n                  >\n                    ").concat(item.course.price, "\n                  </p>\n                </div>\n                <div class=\"d-flex btn-course bg-secondary rounded-bottom\">\n                  <div class=\"btn btn-cart py-8 border-end rounded-0 w-50\" data-id=\"").concat(item.id, "\">\n                    \u52A0\u5165\u8CFC\u7269\u8ECA\n                  </div>\n                  <div class=\"btn btn-more py-8 rounded-0 w-50\" data-id=\"").concat(item.id, "\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n                    More\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n");
+      html += "\n            <div class=\"".concat(styleSwitch, "\">\n            <div class=\"course-card bg-light text-black rounded-2 me-md-16\">\n              <div class=\"course-head\">\n                <img\n                  class=\"object-cover rounded-top justify-content-center img-fluid w-100\"\n                  src=\"").concat(item.course.img, "\"\n                  alt=\"player-guitar\"\n                />\n                <div class=\"d-flex justify-content-center my-8\">\n                  <p class=\"course-name mb-0 fw-bold\">").concat(item.course.name, "</p>\n                </div>\n              </div>\n              <div class=\"course-footer rounded-bottom\">\n                <div class=\"d-flex justify-content-center border-top border-bottom py-8\">\n                  <p class=\"course-price pe-8 mb-0 text-danger fw-bold\">\u8D85\u503C\u50F9\u683C\uFF1A").concat(item.course.discountPrice, "</p>\n                  <p\n                    class=\"course-discountPrice text-decoration-line-through mb-0 text-info\"\n                  >\n                    ").concat(item.course.price, "\n                  </p>\n                </div>\n                <div class=\"d-flex btn-course bg-primary rounded-bottom\">\n                  <div class=\"btn btn-cart py-8 border-end rounded-0 w-50\" data-id=\"").concat(item.id, "\">\n                    \u52A0\u5165\u8CFC\u7269\u8ECA\n                  </div>\n                  <div class=\"btn btn-more py-8 rounded-0 w-50\" data-id=\"").concat(item.id, "\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n                    More\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n");
     });
     className.innerHTML = html;
   }; //搜尋功能
@@ -456,5 +584,20 @@ if (fileName.toLowerCase().includes("search")) {
       console.log(error);
     }
   });
+}
+"use strict";
+
+if (fileName.toLowerCase().includes("track")) {
+  //購買課程
+  var renderCourseItem = function renderCourseItem() {
+    courseItemList.innerHTML = "";
+    myItemList.forEach(function (item) {
+      courseItemList.innerHTML += "\n      <div class=\"col-md-4 mb-24\">\n                    <div class=\"card h-100\">\n                      <img src=\"".concat(item.course.img, "\" class=\"card-img-top object-cover\" alt=\"...\" height=\"175\">\n                      <div class=\"card-body\">\n                        <p class=\"card-title\">").concat(item.course.name, "</p>\n                        <div class=\"progress\">\n                          <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 0%\" aria-valuenow=\"0\"aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                    <div class=\"d-flex justify-content-between mt-16\">\n                        <p class=\"mb-0\">0% \u5B8C\u6210</p>\n                        <p class=\"mb-0\">\u4F5C\u8005\uFF1A").concat(item.first_name + " " + item.last_name, "</p>\n                    </div>\n            </div>\n        </div>\n    </div>\n      ");
+    });
+  };
+
+  var courseItemList = document.querySelector(".course-item-list");
+  console.log(courseItemList);
+  renderCourseItem();
 }
 //# sourceMappingURL=all.js.map

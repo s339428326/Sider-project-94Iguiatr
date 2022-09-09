@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="./assets/images/guitar.png" type="image/x-icon">
     <title>94 | Guitar</title>
     <!-- Boostrap5 -->
     <link
@@ -30,13 +29,13 @@
   </head>
 
   <body>
-    <header class="sticky-top shadow position-relative">
+    <header class="sticky-top shadow">
       <nav class="bg-black border-bottom">
         <div class="container d-flex justify-content-between px-0 px-md-12">
           <a class="bg-primary text-white fs-1 px-16 px-md-102 title font-monospace" href="./index.html"
             >Logo</a
           >
-          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start ">
+          <ul class="d-flex list-unstyled mb-0 align-items-stretch border-start">
             <li class=" position-relative my-auto">
               <a class="btn-cart-modal px-16 px-md-40 py-16 py-md-24" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <span class="material-icons text-white"> shopping_cart 
@@ -45,21 +44,7 @@
               </a>
             </li>
             <li class="border-start border-end px-16 px-md-40 py-8 py-md-16">
-              <a class="fs-5 fw-bold text-white nav-login" href="./login.html">Login</a>
-           
-                <div class="dropdown dropdown-account d-none">
-                  <div class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="material-icons align-middle pt-4">account_circle</span>
-                  </div>
-                  <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownMenuButton1">
-                    <li class="border-bottom pb-8"><a  class="ps-16" href="#">User.name</a></li>
-                    <li><a class="dropdown-item" href="#"></a></li>
-                    <li><a class="dropdown-item" href="#">通知</a></li>
-                    <li><a class="dropdown-item" href="./member.html">會員頁面</a></li>
-                    <li><a class="dropdown-item" href="./trackandFavorites.html">追蹤&收藏</a></li>
-                    <li><a class="dropdown-item btn-login-out" href="./index.html">登出</a></li>
-                  </ul>
-                </div>
+              <a class="fs-5 fw-bold text-white" href="./login.html">Login</a>
             </li>
           </ul>
         </div>
@@ -68,56 +53,82 @@
 
     
 <main>
-  <section class="my-80">
-    <div class="container">
-      <div class="row">
-        <div
-          class="d-flex rounded-3 ps-md-0 flex-column flex-md-row justify-content-center"
-        >
-          <div class="col-md-7 mb-24 mb-md-0">
-            <div class="bg-white ms-0 ms-md-24 rounded-3 px-80 py-40">
-              <h1 class="text-black fs-2 mb-48">付款完成</h1>
-              <p
-                class="w-50 bg-primary text-center fs-1 rounded-2 mx-auto font-monospace my-80"
-              >
-                Logo
-              </p>
-              <div>
-                <h5 class="text-center text-black mb-40">您可以繼續以下探索</h5>
-                <ul
-                  class="list-unstyled d-flex justify-content-between align-items-center flex-column flex-lg-row gap-16"
-                >
-                  <li>
-                    <a
-                      class="btn btn-primary text-white fw-bold"
-                      href="./index.html"
-                      >首頁</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="btn btn-primary text-white fw-bold"
-                      href="./search.html"
-                      >搜尋</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="btn btn-primary text-white fw-bold"
-                      href="./trackandFavorites.html"
-                      >立即上課</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="btn btn-primary text-white fw-bold"
-                      href="./register.html"
-                      >申請帳號</a
-                    >
-                  </li>
-                </ul>
+  <section class="container">
+    <div class="row my-80 gap-32 gap-lg-0">
+      <h1 class="mb-32">結帳</h1>
+      <div class="col-lg-8">
+        <div class="bg-white text-black rounded-3 p-24">
+          <p class="mb-16 fs-3 pb-16 border-bottom">購物內容</p>
+          <ul class="list-unstyled d-flex flex-column gap-16 buy-list">
+            <!-- <li class="rounded-2 shadow p-4 border border-primary">
+              <div class="d-flex gap-16">
+                <div class="coursr-image my-auto">
+                  <img
+                    class="object-cover img-fuild rounded"
+                    src="https://img-c.udemycdn.com/course/480x270/388874_301f_3.jpg"
+                    alt=""
+                    width="124"
+                    height="124"
+                  />
+                </div>
+                <div>
+                  <ul
+                    class="list-unstyled h-100 d-flex flex-column justify-content-around"
+                  >
+                    <li>課程：Playing Scales for Finger-Style Guitar</li>
+                    <li>講師：</li>
+                    <li>課程總時數：</li>
+                    <li>
+                      <div class="d-flex gap-8">
+                        <p class="fs-5 mb-0">價格：$399</p>
+                        <p
+                          class="mb-0 text-decoration-line-through text-info mt-auto"
+                        >
+                          $2990
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <button class="btn btn-danger ms-auto rounded-end">刪除</button>
               </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div
+          class="bg-white p-24 text-black rounded-3 h-100 d-flex flex-column"
+        >
+          <p class="mb-16 fs-3 pb-16">訂單摘要</p>
+          <ul class="list-unstyled d-flex flex-column gap-4 mb-auto buy-price">
+            <li class="d-flex justify-content-between">
+              <p class="mb-0">小計</p>
+              <p class="mb-0">$ 149 NTD</p>
+            </li>
+            <li class="d-flex justify-content-between">
+              <p class="mb-0">今日節省總金額</p>
+              <p class="mb-0">$ 0 NTD</p>
+            </li>
+            <li class="d-flex justify-content-between">
+              <p class="mb-0">運送 (國際優先)</p>
+              <p class="mb-0">$ 0 NTD</p>
+            </li>
+            <li class="d-flex justify-content-between">
+              <p class="mb-0">稅款</p>
+              <p class="mb-0">$ 0 NTD</p>
+            </li>
+          </ul>
+          <div>
+            <div class="d-flex justify-content-between fs-5 fw-bold mb-16">
+              <p class="mb-0">總計</p>
+              <p class="mb-0 buy-price-total">$ 149 NTD</p>
             </div>
+            <a
+              class="btn btn-primary text-white fw-bold w-100 buy-next"
+              href="./payment.html"
+              >下一步</a
+            >
           </div>
         </div>
       </div>

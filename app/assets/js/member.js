@@ -4,6 +4,7 @@ if (fileName.toLowerCase().includes("member")) {
   google.charts.setOnLoadCallback(drawChartFollow);
   google.charts.setOnLoadCallback(drawChartCommodity);
   google.charts.setOnLoadCallback(drawStacked);
+
   function drawChartFollow() {
     var data = google.visualization.arrayToDataTable([
       ["年齡族群", "數量"],

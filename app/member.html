@@ -54,12 +54,12 @@ current: index
             </button>
             <button
               class="nav-link text-start"
-              id="v-pills-settings-tab"
+              id="v-pills-his-tab"
               data-bs-toggle="pill"
-              data-bs-target="#v-pills-settings"
+              data-bs-target="#v-pills-his"
               type="button"
               role="tab"
-              aria-controls="v-pills-settings"
+              aria-controls="v-pills-his"
               aria-selected="false"
             >
               歷史紀錄
@@ -873,11 +873,48 @@ current: index
           </div>
           <div
             class="tab-pane fade"
-            id="v-pills-settings"
+            id="v-pills-his"
             role="tabpanel"
-            aria-labelledby="v-pills-settings-tab"
+            aria-labelledby="v-pills-his-tab"
           >
-            ...
+            <p class="fs-3 fw-bold">歷史查詢</p>
+            <div class="col-md-8">
+              <div class="bg-light text-black">
+                <div class="col-md-12 mb-24">
+                  <div
+                    class="search bg-light border border-2 border-primary mb-24"
+                  >
+                    <form
+                      class="d-flex align-items-center justify-content-between"
+                      action=""
+                    >
+                      <input
+                        class="border-0 w-75 px-16 fake-search"
+                        type="text"
+                        placeholder="搜索"
+                      />
+                      <select
+                        id="course"
+                        class="w-auto form-select form-select-sm border-end-0 border-top-0 border-bottom-0 border-primary border-2 rounded-0 text-dark pe-40"
+                        aria-label="Default select example"
+                      >
+                        <option selected="">全部</option>
+                        <option value="1">所有人</option>
+                        <option value="2">追蹤者</option>
+                        <option value="3">學生</option>
+                      </select>
+                      <a type="submit" class="border-0 rounded-0" href="#">
+                        <span
+                          class="bg-primary p-8 text-white material-icons-outlined d-block"
+                        >
+                          search
+                        </span>
+                      </a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

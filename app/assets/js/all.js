@@ -12,7 +12,7 @@ AOS.init({
   throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
+  offset: 50, // offset (in px) from the original trigger point
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: "ease", // default easing for AOS animations
@@ -48,6 +48,7 @@ var swiper = new Swiper(".swiper-course", {
 //url checker
 const urlLocation = window.location.href.split("/");
 const fileName = urlLocation[urlLocation.length - 1];
+console.log(urlLocation, fileName);
 
 //Api data
 const userData = [];
@@ -55,8 +56,8 @@ const userData = [];
 let filteredData = [];
 //購物車
 let cartData = [];
-//購買確認
-let confirmPurchase = false;
+//已購買商品
+let myItemList = [];
 
 let priceTotal = 0;
 const body = document.querySelector("body");
@@ -73,6 +74,17 @@ const btnLoginOut = document.querySelector(".btn-login-out");
 
 //取得本地購物車內容
 getloaclCart();
+//取得購買課程資訊
+getmyItemList();
+
+function getmyItemList() {
+  if (JSON.parse(localStorage.getItem("course")) !== null) {
+    myItemList = JSON.parse(localStorage.getItem("course"));
+  } else {
+    myItemList = [];
+  }
+  console.log(myItemList);
+}
 
 function getloaclCart() {
   let cartlist;
@@ -141,6 +153,9 @@ function addCart(id) {
   const cartItme = userData.find((item) => item.id === id);
   if (cartData.some((cart) => cart.id === id)) {
     return alert("此項目已在購物車內");
+  }
+  if (myItemList.some((item) => item.id === id)) {
+    return alert("此項目購買請查看 追蹤 & 收藏");
   }
 
   cartData.push(cartItme);
